@@ -1,0 +1,29 @@
+<nav class="navbar is-light">
+  <div class="container">
+    <div class="navbar-brand">
+      <a href="/" class="navbar-item">/r/anime Awards 2018<small>beta</small></a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start"></div>
+      <div class="navbar-end">
+        <% if @r %>
+          <div class="navbar-item has-dropdown is-hoverable is-right">
+            <a class="navbar-link" href="#">
+              <% if @r.me.subreddit %>
+                <img class="avatar" src="<%= @r.me.subreddit[:icon_img] %>" alt="avatar">
+              <% end %>
+              <%= @r.me.name %>
+            </a>
+            <div class="navbar-dropdown">
+              <a href="/logout" class="navbar-item">Log out</a>
+            </div>
+          </div>
+        <% else %>
+          <div class="navbar-item">
+            <a class="button is-primary" href="/login">Sign in with Reddit</a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

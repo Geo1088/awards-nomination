@@ -1,0 +1,24 @@
+# Gets a page of characters from a given show.
+query ($showId: Int, $page: Int) {
+  Media(id: $showId) {
+    characters(page: $page) {
+      pageInfo {
+        hasNextPage
+        total
+        perPage
+      }
+      nodes {
+        id
+        name {
+          first
+          last
+          native
+          alternative
+        }
+        image {
+          medium
+        }
+      }
+    }
+  }
+}

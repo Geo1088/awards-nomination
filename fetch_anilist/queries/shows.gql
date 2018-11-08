@@ -1,0 +1,34 @@
+# Get a page of shows.
+query ($page: Int) {
+  Page(page: $page) {
+    pageInfo {
+      hasNextPage
+      total
+      perPage
+      lastPage
+    }
+    media(
+      type: ANIME,
+      format_in: [TV, TV_SHORT, OVA, MOVIE, SPECIAL]
+      seasonYear: 2018,
+      sort: START_DATE
+    ) {
+      id
+      title {
+        romaji
+        english
+        native
+      }
+      synonyms
+      coverImage {
+        medium
+      }
+      format
+      characters {
+        edges {
+          id
+        }
+      }
+    }
+  }
+}
