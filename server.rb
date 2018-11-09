@@ -12,6 +12,9 @@ use Redd::Middleware, CONFIG.merge({
   scope: ["identity"]
 })
 
+set :bind, "0.0.0.0"
+set :port, ENV["PORT"] || 4567
+
 before do
   @r = request.env["redd.session"]
   begin
@@ -32,6 +35,7 @@ helpers do
 end
 
 get "/" do
+  redirect_to "/form" if @r
   erb :index
 end
 
