@@ -68,6 +68,7 @@ Vue.component('show-list', {
 					</p>
 					<div class="options tabs is-toggle">
 						<ul>
+							<!-- TODO: this isn't responsive -->
 							<li v-for="option in options" :class="{'is-active': selections[show.id] === option}">
 								<a @click="selectThing(show.id, option)">{{option}}</a>
 							</li>
