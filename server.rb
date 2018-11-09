@@ -35,7 +35,7 @@ helpers do
 end
 
 get "/" do
-  redirect_to "/form" if @r
+  redirect to "/form" if @r
   erb :index
 end
 
