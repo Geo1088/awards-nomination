@@ -8,6 +8,11 @@
 <div id="app"></div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 <script src="/js/common_components.js"></script>
+<script type="text/javascript">
+  // TODO: HOLY HELL there has to be a better way to do this
+  charactersJSON = <%= characters.inspect %>
+  showsJSON = <%= shows.inspect %>
+</script>
 <script src="/js/public_nominations.js"></script>
 
 <footer class="footer">

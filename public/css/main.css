@@ -27,6 +27,7 @@
 }
 .more-items {
 	padding: 1rem 0;
+	flex: 100%;
 }
 
 .cover {
@@ -46,6 +47,6 @@
 	left: 0;
 	right: 0;
 	text-align: center;
-	padding: 10px;
+	padding: 1rem;
 	background: #f5f5f5;
 }

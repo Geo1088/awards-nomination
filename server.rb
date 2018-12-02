@@ -2,7 +2,6 @@ require "yaml"
 require "sinatra"
 require "redd/middleware"
 require "rethinkdb"
-require "json-schema"
 
 include RethinkDB::Shortcuts
 c = r.connect db: 'aanoms_responses'
@@ -64,7 +63,11 @@ end
 
 get "/public-nominations" do
   authenticate!
-  erb :public_nominations
+  data = r.table("public_nominations").get(@r.me.name).run(c) || {}
+  erb :public_nominations, locals: {
+    characters: JSON.generate(data["characters"]),
+    shows: JSON.generate(data["shows"])
+  }
 end
 
 get "/hosts/genre-allocation" do
@@ -76,7 +79,7 @@ post "/response/:form" do |form|
   authenticate!
   halt 400, "Invalid Form" if !r.table_list().run(c).include? form
   begin
-    body = JSON.parse(request.body.string, symbolize_names: true)
+    body = JSON.parse(request.body.string)
   rescue
     halt 400, "Invalid Body"
   end
@@ -84,13 +87,15 @@ post "/response/:form" do |form|
   if r.table(form).get(@r.me.name).run(c)
     puts "existed"
     r.table(form).get(@r.me.name).update({
-      selections: body[:selections]
+      characters: body["characters"],
+      shows: body["shows"]
     }).run(c)
   else
     puts "not existed"
     r.table(form).insert({
       id: @r.me.name,
-      selections: body[:selections]
+      characters: body["characters"],
+      shows: body["shows"]
     }).run(c)
   end
   "Success"

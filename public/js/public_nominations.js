@@ -5,8 +5,8 @@ const app = new Vue({
 		shows: [],
 		characterFilter: '',
 		showFilter: '',
-		characterSelections: {},
-		showSelections: {},
+		characterSelections: JSON.parse(charactersJSON) || {},
+		showSelections: JSON.parse(showsJSON) || {},
 		showAllCharacters: false,
 		showAllShows: false,
 		saveButtonText: 'Save Selections',
@@ -100,15 +100,17 @@ const app = new Vue({
 		save () {
 			this.saveButtonText = "Saving..."
 			submit('/response/public_nominations', {
-				selections: {
-					characters: this.characterSelections,
-					shows: this.showSelections
-				}
+				characters: this.characterSelections,
+				shows: this.showSelections
 			}).then(() => {
-				alert('Saved!');
 				this.changesSinceSave = false;
+				this.saveButtonText = "Saved!"
+				setTimeout(() => {
+					this.saveButtonText = "Save Selections"
+				}, 1500)
 			}).catch(() => {
-				alert('Failed to save, try again');
+				this.saveButtonText = "Save Selections"
+				alert('Failed to save, try again')
 			});
 		}
 	}

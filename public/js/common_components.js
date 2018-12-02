@@ -15,12 +15,13 @@ Vue.component('show-list', {
 		prop: 'selections',
 		event: 'change'
 	},
-	props: ['shows', 'options', 'filterText', 'showAll'],
-	data () {
-		return {
-			selections: {}
-		};
-	},
+	props: [
+		'shows',
+		'options',
+		'filterText',
+		'showAll',
+		'selections'
+	],
 	computed: {
 		_filteredShows () {
 			return this.shows.filter(show => stringMatchesArray(this.filterText, show.terms))
@@ -95,12 +96,13 @@ Vue.component('character-list', {
 		prop: 'selections',
 		event: 'change'
 	},
-	props: ['characters', 'filterText', 'options', 'showAll'],
-	data () {
-		return {
-			selections: {}
-		};
-	},
+	props: [
+		'characters',
+		'filterText',
+		'options',
+		'showAll',
+		'selections'
+	],
 	computed: {
 		_filteredCharacters () {
 			return this.characters.filter(char => stringMatchesArray(this.filterText, char.terms))
