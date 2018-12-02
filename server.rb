@@ -46,14 +46,13 @@ helpers do
 end
 
 get "/" do
-  redirect to "/form" if @r
   erb :index
 end
 
 # Auth stuff
 get "/login" do redirect to "/auth/reddit" end
 get "/auth/reddit/callback" do
-  redirect to "/" unless request.env["redd.error"]
+  redirect to "/public-nominations" unless request.env["redd.error"]
   erb :error, locals: {error: request.env["redd.error"]}
 end
 get "/logout" do
