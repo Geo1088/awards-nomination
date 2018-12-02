@@ -24,6 +24,7 @@ GEM
       rack
     redd (0.8.8)
       http (~> 2.2)
+    rethinkdb (2.3.0.2)
     sinatra (2.0.4)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -40,6 +41,7 @@ PLATFORMS
 DEPENDENCIES
   httparty!
   redd!
+  rethinkdb!
   sinatra!
 
 BUNDLED WITH

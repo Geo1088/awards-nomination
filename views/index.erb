@@ -1,7 +1,7 @@
 <div class="section">
   <p class="container">
     <% if @r %>
-      Hi <%= @r.me.name %>, <a href="/form">fill out your nominations</a> or <a href="/logout">log out</a>
+      Hi <%= @r.me.name %>, <a href="/public-nominations">fill out your nominations</a> or <a href="/logout">log out</a>
     <% else %>
       <a href="/login">Log in with Reddit</a>
     <% end %>
