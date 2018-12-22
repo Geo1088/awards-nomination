@@ -61,7 +61,7 @@ Vue.component('show-display', {
 		infoline () {
 			return [
 				this.format,
-				`<a href="https://anilist.co/anime/${this.show.id}" target="_blank">AniList</a>`
+				`<a href="https://anilist.co/anime/${this.show.id}" target="_blank" onclick="event.stopPropagation()">AniList</a>`
 			].filter(s => s).join(" - ")
 		},
 		format () {
@@ -102,7 +102,7 @@ Vue.component('character-display', {
 			return `From ${this.shownames.join(', ')}`
 		},
 		shownames () {
-			return this.character.show_ids.map(id => `<a href="https://anilist.co/anime/${id}" target="_blank"><i>${this.$root.shows.find(s => s.id === id).terms[0].replace(/&/g, '&amp;').replace(/</g, '&lt;')}</i></a>`)
+			return this.character.show_ids.map(id => `<a href="https://anilist.co/anime/${id}" target="_blank" onclick="event.stopPropagation()"><i>${this.$root.shows.find(s => s.id === id).terms[0].replace(/&/g, '&amp;').replace(/</g, '&lt;')}</i></a>`)
 		}
 	}
 })
