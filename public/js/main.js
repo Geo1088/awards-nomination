@@ -1,10 +1,14 @@
+const data = JSON.parse(showsJSON).data || {};
 const app = new Vue({
 	el: '#app',
 	data: {
 		selectedTab: 'Best Movie',
 		shows: [],
 		filter: '',
-		selections: JSON.parse(showsJSON).data || {},
+		movieSelections: data.movies || {},
+		shortSelections: data.shorts || {},
+		originalSelections: data.originals || {},
+		aotySelections: data.aoty || {},
 		showAll: false,
 		saveButtonText: 'Save Selections',
 		changesSinceSave: false,
@@ -18,6 +22,18 @@ const app = new Vue({
 		},
 		moreItems () {
 			return this._filteredShows.length - this.filteredShows.length;
+		},
+		currentProp () {
+			switch (this.selectedTab) {
+				case 'Best Movie': return 'movieSelections';
+				case 'Best Short': return 'shortSelections';
+				case 'Best Original Anime': return 'originalSelections';
+				case 'Anime of the Year': return 'aotySelections';
+				default: throw new TypeError(this.selectedTab);
+			}
+		},
+		currentSelectionsObj () {
+			return this[this.currentProp] || {};
 		}
 	},
 	template: `
@@ -69,7 +85,7 @@ const app = new Vue({
 							v-for="show in filteredShows"
 							:key="show.id"
 							:show="show"
-							:checked="selections[show.id] === selectedTab"
+							:checked="currentSelectionsObj[show.id]"
 							@click.native="setShow(show.id, selectedTab)"
 						/>
 						<div class="more-items" v-if="moreItems">
@@ -95,17 +111,17 @@ const app = new Vue({
 	},
 	methods: {
 		setShow (id, category) {
-			console.log('saa')
-			if (this.selections[id] === category) {
-				Vue.set(this.selections, id, null);
-			} else if (!this.selections[id] || confirm(`You have already selected this show for the ${this.selections[id]} category. You can only nominate a show for one category. Would you like to change it to ${category}?`)) {
-				Vue.set(this.selections, id, category);
-			}
+			Vue.set(this.currentSelectionsObj, id, !this.currentSelectionsObj[id]);
 		},
 		save () {
 			this.saveButtonText = "Saving..."
 			submit('/response/main', {
-				data: this.selections
+				data: {
+					movies: this.movieSelections,
+					shorts: this.shortSelections,
+					originals: this.originalSelections,
+					aoty: this.aotySelections,
+				},
 			}).then(() => {
 				this.changesSinceSave = false;
 				this.saveButtonText = "Saved!"
