@@ -34,7 +34,7 @@ const app = new Vue({
 				<div class="hero-body">
 					<div class="container">
 						<h2 class="title is-size-1 is-size-2-mobile">Character Awards</h2>
-						<p class="subtitle is-size-4 is-size-5-mobile">Pick the characters that played their roles the best this year. Also pick the show that you think had the best overall cast.</p>
+						<p class="subtitle is-size-4 is-size-5-mobile">Pick the characters that played their roles the best this year, and the show with the best overall cast.</p>
 					</div>
 				</div>
 				<div class="hero-foot">
@@ -59,7 +59,7 @@ const app = new Vue({
 						<div class="level-left">
 							<div class="intro">
 								<h2 class="is-size-2 is-size-3-mobile">
-									{{selectedTab === 'Overall Cast' ? 'Shows' : 'Characters'}}
+									{{selectedTab}}
 								</h2>
 							</div>
 						</div>

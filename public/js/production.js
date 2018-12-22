@@ -1,7 +1,7 @@
 const app = new Vue({
 	el: '#app',
 	data: {
-		selectedTab: 'Action',
+		selectedTab: 'Art Style',
 		shows: [],
 		filter: '',
 		selections: JSON.parse(showsJSON).data || {},
@@ -25,21 +25,19 @@ const app = new Vue({
 			<div class="hero is-dark">
 				<div class="hero-body">
 					<div class="container">
-						<h2 class="title is-size-1 is-size-2-mobile">Genre Awards</h2>
-						<p class="subtitle is-size-4 is-size-5-mobile">Pick the shows in each genre grouping below that stood above the rest this year.</p>
+						<h2 class="title is-size-1 is-size-2-mobile">Production Awards</h2>
+						<p class="subtitle is-size-4 is-size-5-mobile">Pick the shows from the year that excelled in various technical aspects.</p>
 					</div>
 				</div>
 				<div class="hero-foot">
 					<div class="container">
 						<tab-bar
 							:tabs="[
-								'Action',
-								'Adventure',
-								'Comedy',
-								'Drama',
-								'Romance',
-								'Slice of Life',
-								'Thriller/Mystery'
+								'Art Style',
+								'Animation',
+								'Background Art',
+								'Character Design',
+								'Cinematography'
 							]"
 							v-model="selectedTab"
 						/>
