@@ -74,9 +74,7 @@ const app = new Vue({
 							:show="show"
 							:checked="selections[show.id] === selectedTab"
 							@click.native="setShow(show.id, selectedTab)"
-						>
-							Something I add here
-						</show-display>
+						/>
 						<div class="more-items" v-if="moreItems">
 							<p class="has-text-centered" style="flex: 1 1 100%">
 								And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)

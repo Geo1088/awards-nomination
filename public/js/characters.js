@@ -84,9 +84,7 @@ const app = new Vue({
 								:show="show"
 								:checked="showSelections[show.id]"
 								@click.native="toggleShow(show.id)"
-							>
-								Something I add here
-							</show-display>
+							/>
 							<div class="more-items" v-if="moreItems">
 								<p class="has-text-centered" style="flex: 1 1 100%">
 									And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
@@ -100,9 +98,7 @@ const app = new Vue({
 								:character="character"
 								:checked="selectedTab === 'Antagonist' ? antagSelections[character.id] : characterSelections[character.id] === selectedTab"
 								@click.native="setCharacter(character.id, selectedTab)"
-							>
-								Something I add here
-							</character-display>
+							/>
 							<div class="more-items" v-if="moreItems">
 								<p class="has-text-centered" style="flex: 1 1 100%">
 									And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
