@@ -71,7 +71,7 @@ const app = new Vue({
 									</button>
 								</p>
 								<p class="control is-expanded">
-									<input class="input" type="text" placeholder="Find a show..." v-model="filter">
+									<input class="input" type="text" :placeholder="\`Find a \${selectedTab === 'Overall Cast' ? 'show' : 'character'}...\`" v-model="filter">
 								</p>
 							</div>
 						</div>
