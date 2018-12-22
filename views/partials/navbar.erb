@@ -1,10 +1,15 @@
-<nav class="navbar is-light">
+<nav class="navbar is-dark">
   <div class="container">
     <div class="navbar-brand">
-      <a href="/" class="navbar-item">/r/anime Awards 2018<small>beta</small></a>
+      <a href="/" class="navbar-item has-text-weight-semibold">/r/anime Awards 2018</a>
     </div>
     <div class="navbar-menu is-active">
-      <div class="navbar-start"></div>
+      <div class="navbar-start">
+        <a href="/genres" class="navbar-item">Genres</a>
+        <a href="/characters" class="navbar-item">Characters</a>
+        <a href="/production" class="navbar-item">Production</a>
+        <a href="/main" class="navbar-item">Main</a>
+      </div>
       <div class="navbar-end">
         <% if @r %>
           <div class="navbar-item has-dropdown is-hoverable is-right">

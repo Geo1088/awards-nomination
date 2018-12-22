@@ -10,88 +10,69 @@ function stringMatchesArray (str, arr) {
 	return arr.some(val => fuzzyMatch(str, val));
 }
 
-Vue.component('button-select', {
-	props: [
-		'options',
-		'value',
-		'selectNone'
-	],
-	computed: {
-		objectOptions () {
-			if (Array.isArray(this.options)) {
-				return this.options.reduce((a, b) => Object.assign(a, {[b]: b}), {})
-			} else {
-				return this.options
-			}
-		}
+Vue.component('tab-bar', {
+	model: {
+		prop: 'selectedTab',
+		event: 'change'
 	},
-	methods: {
-		select (value) {
-			if (this.selectNone && this.value === value) {
-				this.value = undefined
-			} else {
-				this.value = value
-			}
-			this.$emit('input', this.value)
-		}
+	props: {
+		tabs: Array,
+		selectedTab: String
 	},
 	template: `
-		<div class="button-select buttons has-addons">
-			<a
-				v-for="(thisValue, name) in options"
-				:key="id"
-				:class="{
-					button: true,
-					'is-primary': value === thisValue
-				}"
-				@click="selectThing(thisValue)"
-			>
-				{{name}}
-			</a>
+		<div class="tabs is-boxed">
+			<ul>
+				<li
+					v-for="tab in tabs"
+					:key="tab"
+					:class="{'is-active': tab === selectedTab}"
+					@click="$emit('change', tab)"
+				>
+					<a>{{tab}}</a>
+				</li>
+			</ul>
 		</div>
 	`
 })
 
 Vue.component('show-display', {
-	data () {
-		return {
-			category: undefined,
-			selected: false
-		}
+	props: {
+		show: Object,
+		checked: Boolean,
 	},
 	template: `
-		<div class="show" v-for="show in filteredShows" :key="show.id">
-			<div class="cover">
-				<img :src="show.img" :alt="show.terms[0]">
+		<div class="media-item">
+			<div class="cover" :style="\`background-image: url(\${show.img});\`">
+				<span class="check fa-stack" v-if="checked">
+					<i class="fas fa-square fa-stack-2x has-text-primary"/>
+					<i class="fas fa-check fa-stack-1x has-text-white"/>
+				</span>
 			</div>
 			<div class="info-selection" style="flex-grow: 1;">
 				<div class="show-title">
 					<h3 class="title is-size-3 is-size-5-mobile">{{show.terms[0]}}</h3>
-					<p class="subtitle is-size-6" v-html="infoline(show)"></p>
+					<p class="subtitle is-size-6" v-html="infoline"></p>
 				</div>
-				<button-select
-					class="is-hidden-touch"
-					:options="{
-						'Action': 'action',
-						'Adventure': 'adventure',
-						'Comedy': 'comedy',
-						'Drama': 'drama',
-						'Romance': 'drama2',
-						'Slice of Life': 'cgdct',
-						'Thriller/Mystery': 'spooky'
-					}"
-				/>
-				<p class="options select is-hidden-desktop">
-					<select @change="selectChanged">
-						<option :value="undefined"></option>
-						<option v-for="option in options">
-							{{option}}
-						</option>
-					</select>
-				</p>
+				<slot/>
 			</div>
 		</div>
-	`
+	`,
+	computed: {
+		infoline () {
+			return [
+				this.format,
+				`<a href="https://anilist.co/anime/${this.show.id}" target="_blank">AniList</a>`
+			].filter(s => s).join(" - ")
+		},
+		format () {
+			switch (this.show.format) {
+				case 'TV_SHORT': return 'TV Short'
+				case 'MOVIE': return 'Movie'
+				case 'SPECIAL': return 'Special'
+				default: return this.show.format
+			}
+		},
+	}
 })
 
 Vue.component('show-list', {
@@ -176,7 +157,7 @@ Vue.component('show-list', {
 			</div>
 			<div class="more-items" v-if="moreItems">
 				<p class="has-text-centered" style="flex: 1 1 100%">
-					And <b>{{moreItems}}</b> more (<a @click="$root.showAllShows = true">Show all</a>)
+					And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
 				</p>
 			</div>
 		</div>

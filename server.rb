@@ -60,42 +60,30 @@ get "/logout" do
   redirect to "/"
 end
 
-get "/public-nominations" do
+get %r{/(genres|characters|production|main)} do |route|
   authenticate!
-  data = r.table("public_nominations").get(@r.me.name).run(c) || {}
-  erb :public_nominations, locals: {
-    characters: JSON.generate(data["characters"]),
-    shows: JSON.generate(data["shows"])
+  data = r.table(route).get(@r.me.name).run(c) || {}
+  erb route.to_sym, locals: {
+    data: data
   }
-end
-
-get "/hosts/genre-allocation" do
-  # authenticate! host: true
-  erb :genre_allocation
 end
 
 post "/response/:form" do |form|
   authenticate!
   halt 400, "Invalid Form" if !r.table_list().run(c).include? form
   begin
-    body = JSON.parse(request.body.string)
+    data = JSON.parse(request.body.string)
   rescue
     halt 400, "Invalid Body"
   end
 
   if r.table(form).get(@r.me.name).run(c)
     puts "existed"
-    r.table(form).get(@r.me.name).update({
-      characters: body["characters"],
-      shows: body["shows"]
-    }).run(c)
+    r.table(form).get(@r.me.name).update(data).run(c)
   else
     puts "not existed"
-    r.table(form).insert({
-      id: @r.me.name,
-      characters: body["characters"],
-      shows: body["shows"]
-    }).run(c)
+    data["id"] = @r.me.name
+    r.table(form).insert(data).run(c)
   end
   "Success"
 end

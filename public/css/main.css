@@ -6672,51 +6672,42 @@ label.panel-block {
   margin-right: 10px;
   vertical-align: middle; }
 
-.character-list {
+.media-list {
   display: flex;
   flex-wrap: wrap; }
-
-.show, .character, .more-items {
-  display: flex;
-  padding: 1rem;
-  border-top: 1px solid rgba(219, 219, 219, 0.5); }
-
-.show:first-child,
-.character:first-child,
-.character:nth-child(2) {
-  border-top: 0; }
-
-.character:nth-of-type(2n) {
-  border-left: 1px solid rgba(219, 219, 219, 0.5); }
-
-.character {
-  flex: 1 1 calc(50% - 2rem); }
-
-.options {
-  margin-top: 0.5rem;
-  margin-bottom: 0 !important; }
-
-.more-items {
-  padding: 1rem 0;
-  flex: 100%; }
+  .media-list .media-item {
+    flex: 0 0 calc(50%);
+    display: flex;
+    padding: 1rem 0 0 1rem; }
+    .media-list .media-item .cover {
+      flex: 0 0 75px;
+      height: 100px;
+      background: center/cover;
+      position: relative; }
+      .media-list .media-item .cover .check {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+  .media-list .more-items {
+    padding: 1rem 0;
+    flex: 100%; }
 
 .cover {
-  width: 100px;
-  flex: 0 0 100px;
-  position: relative; }
+  width: 50px;
+  height: 75px;
+  flex: 0 0 50px;
+  position: relative;
+  background: center/cover;
+  border-radius: 5px; }
   @media screen and (max-width: 768px) {
     .cover {
       width: 50px;
       flex: 0 0 50px; } }
-  .cover img {
-    display: block; }
-  .cover .button {
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem; }
-
-.cover img {
-  display: block; }
 
 .info-selection {
   flex: 1 1 calc(50% - 100px);
@@ -6729,15 +6720,10 @@ label.panel-block {
   right: 0;
   text-align: center;
   padding: 0.5rem;
-  background: #f5f5f5; }
+  background: #363636; }
 
 @media screen and (min-width: 769px), print {
   .save-button {
     font-size: 1.5rem; } }
-
-@media screen and (max-width: 768px) {
-  .show .button, .character .button {
-    font-size: 0.75rem;
-    border-radius: 2px; } }
 
 /*# sourceMappingURL=main.css.map */
