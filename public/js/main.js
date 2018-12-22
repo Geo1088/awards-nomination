@@ -104,7 +104,7 @@ const app = new Vue({
 		},
 		save () {
 			this.saveButtonText = "Saving..."
-			submit('/response/genres', {
+			submit('/response/main', {
 				data: this.selections
 			}).then(() => {
 				this.changesSinceSave = false;
