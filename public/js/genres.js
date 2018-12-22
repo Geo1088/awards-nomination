@@ -22,7 +22,7 @@ const app = new Vue({
 	},
 	template: `
 		<div class="app">
-			<div class="hero is-primary">
+			<div class="hero is-dark">
 				<div class="hero-body">
 					<div class="container">
 						<h2 class="title is-size-1 is-size-2-mobile">Genre Awards</h2>
@@ -57,7 +57,7 @@ const app = new Vue({
 						<div class="level-right">
 							<div class="field is-grouped">
 								<p class="control">
-									<button :class="{button: true, 'is-primary': showAll}" @click="showAll = !showAll">
+									<button :class="{button: true, 'is-link': showAll}" @click="showAll = !showAll">
 										Show{{showAll ? 'ing' : ''}} All
 									</button>
 								</p>

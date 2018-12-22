@@ -41,7 +41,7 @@ Vue.component('show-display', {
 		checked: Boolean,
 	},
 	template: `
-		<div class="media-item">
+		<div :class="['media-item', {checked}]">
 			<div class="cover" :style="\`background-image: url(\${show.img});\`">
 				<span class="check fa-stack" v-if="checked">
 					<i class="fas fa-square fa-stack-2x has-text-primary"/>

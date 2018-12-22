@@ -6672,6 +6672,12 @@ label.panel-block {
   margin-right: 10px;
   vertical-align: middle; }
 
+.hero.is-dark .tabs.is-boxed li.is-active a,
+.hero.is-dark .tabs.is-boxed li.is-active a:hover,
+.hero.is-dark .tabs.is-toggle li.is-active a,
+.hero.is-dark .tabs.is-toggle li.is-active a:hover {
+  background-color: white; }
+
 .media-list {
   display: flex;
   flex-wrap: wrap; }
@@ -6686,13 +6692,15 @@ label.panel-block {
       position: relative; }
       .media-list .media-item .cover .check {
         position: absolute;
-        bottom: 5px;
-        right: 5px;
+        bottom: 0;
+        right: 0;
         width: 2rem;
         height: 2rem;
         display: flex;
         justify-content: center;
         align-items: center; }
+    .media-list .media-item.checked .cover {
+      box-shadow: inset 0 0 0 5px #00d1b2; }
   .media-list .more-items {
     padding: 1rem 0;
     flex: 100%; }
@@ -6725,5 +6733,8 @@ label.panel-block {
 @media screen and (min-width: 769px), print {
   .save-button {
     font-size: 1.5rem; } }
+
+.app {
+  margin-bottom: 70px; }
 
 /*# sourceMappingURL=main.css.map */
