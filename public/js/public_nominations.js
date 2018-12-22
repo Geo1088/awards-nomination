@@ -20,7 +20,6 @@ const app = new Vue({
 						<div class="level-left">
 							<div class="intro">
 								<h2 class="is-size-2 is-size-3-mobile">Shows</h2>
-								<p>Find the shows you enjoyed the most and pick the category they fit best.</p>
 							</div>
 						</div>
 						<div class="level-right">
@@ -28,7 +27,7 @@ const app = new Vue({
 								<p class="control">
 									<button :class="{button: true, 'is-link': showAllShows}" @click="showAllShows = !showAllShows">Show{{showAllShows ? 'ing' : ''}} All</button>
 								</p>
-								<p class="control">
+								<p class="control is-expanded">
 									<input class="input" type="text" placeholder="Find a show..." v-model="showFilter">
 								</p>
 							</div>
@@ -57,7 +56,6 @@ const app = new Vue({
 						<div class="level-left">
 							<div class="intro">
 								<h2 class="is-size-2 is-size-3-mobile">Characters</h2>
-								<p>Find the characters you liked the most and select whether you think they were main or supporting.</p>
 							</div>
 						</div>
 						<div class="level-right">
@@ -65,7 +63,7 @@ const app = new Vue({
 								<p class="control">
 									<button :class="{button: true, 'is-link': showAllCharacters}" @click="showAllCharacters = !showAllCharacters">Show{{showAllCharacters ? 'ing' : ''}} All</button>
 								</p>
-								<p>
+								<p class="control is-expanded">
 									<input class="input" type="text" placeholder="Find a character..." v-model="characterFilter">
 								</p>
 							</div>
@@ -75,8 +73,10 @@ const app = new Vue({
 						:characters="characters"
 						:filterText="characterFilter"
 						:options="[
-							'Main',
-							'Supporting'
+							'Main Dramatic',
+							'Main Comedic',
+							'Supporting Dramatic',
+							'Supporting Comedic'
 						]"
 						v-model="characterSelections"
 						:showAll="showAllCharacters"
@@ -84,16 +84,22 @@ const app = new Vue({
 				</div>
 			</section>
 			<div class="save-footer">
-				<button class="button is-success is-large" @click="save">{{saveButtonText}}</button>
+				<button class="button is-success save-button" @click="save">{{saveButtonText}}</button>
 			</div>
 		</div>
 	`,
 	watch: {
-		showSelections () {
-			this.changesSinceSave = true
+		showSelections: {
+			handler () {
+				this.changesSinceSave = true
+			},
+			deep: true
 		},
-		characterSelections () {
-			this.changesSinceSave = true
+		characterSelections: {
+			handler () {
+				this.changesSinceSave = true
+			},
+			deep: true
 		}
 	},
 	methods: {
