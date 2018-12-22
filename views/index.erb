@@ -1,7 +1,15 @@
+<div class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-size-1 is-size-2-mobile">The /r/anime Awards</h1>
+      <p class="subtitle is-size-4 is-size-5-mobile">Some flashy subtitle text or something</p>
+    </div>
+  </div>
+</div>
 <div class="section">
   <p class="container">
     <% if @r %>
-      Hi <%= @r.me.name %>, <a href="/public-nominations">fill out your nominations</a> or <a href="/logout">log out</a>
+      Hi <%= @r.me.name %>, check the nomination categories in the navbar or <a href="/logout">log out</a>
     <% else %>
       <a href="/login">Log in with Reddit</a>
     <% end %>

@@ -52,7 +52,8 @@ end
 # Auth stuff
 get "/login" do redirect to "/auth/reddit" end
 get "/auth/reddit/callback" do
-  redirect to "/public-nominations" unless request.env["redd.error"]
+  redirect to "/genres" unless request.env["redd.error"]
+  redirect to "/" if request.env["redd.error"] == "access_denied"
   erb :error, locals: {error: request.env["redd.error"]}
 end
 get "/logout" do
