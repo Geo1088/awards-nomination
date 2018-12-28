@@ -15,7 +15,19 @@ const app = new Vue({
 	},
 	computed: {
 		_filteredShows () {
-			return this.shows.filter(show => stringMatchesArray(this.filter, show.terms));
+			return this.shows.filter(show => stringMatchesArray(this.filter, show.terms))
+				.filter(show => {
+					switch (this.selectedTab) {
+						case 'Best Movie':
+							return show.format === 'MOVIE'
+						case 'Best Original Anime':
+							return show.original
+						case 'Best Short':
+							return show.short
+						case 'Anime of the Year':
+							return !show.short && show.format !== 'MOVIE'
+					}
+				});
 		},
 		filteredShows () {
 			return this.showAll ? this._filteredShows : this._filteredShows.slice(0, 10);

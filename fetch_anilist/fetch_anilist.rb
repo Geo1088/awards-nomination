@@ -52,7 +52,9 @@ def get_shows(page: 1)
       mal: show["idMal"],
       terms: show["title"].values.concat(show["synonyms"]),
       img: show["coverImage"]["medium"],
-      format: movie ? "MOVIE" : show["format"]
+      format: movie ? "MOVIE" : show["format"],
+      short: MODIFICATIONS["shorts"].include?(show["id"]),
+      original: MODIFICATIONS["originals"].include?(show["id"])
     })
     get_show_characters show["id"] if show["characters"]["edges"].size > 0
   end
@@ -102,8 +104,10 @@ def get_extra_show(show_id)
     mal: show["idMal"],
     terms: show["title"].values.concat(show["synonyms"]),
     img: show["coverImage"]["medium"],
-    format: show["format"]
-  })
+    format: show["format"],
+    short: MODIFICATIONS["shorts"].include?(show["id"]),
+    original: MODIFICATIONS["originals"].include?(show["id"])
+})
   get_show_characters show_id if show["characters"]["edges"].size > 0
 end
 
