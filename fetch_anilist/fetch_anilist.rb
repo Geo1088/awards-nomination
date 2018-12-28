@@ -3,6 +3,8 @@ require "httparty"
 
 SHOWS_QUERY = File.read "queries/shows.gql"
 CHARS_QUERY = File.read "queries/show_characters.gql"
+SINGLE_SHOW_QUERY = File.read "queries/single_show.gql"
+MODIFICATIONS = JSON.parse File.read "edited_shows.json"
 
 def anilist_request(query, variables = {})
   # Make the request
@@ -15,7 +17,6 @@ def anilist_request(query, variables = {})
   }.to_json
 
   # Handle ratelimits for future requests
-  resets_in = res.headers["x-ratelimit-reset"].to_i - Time.now.to_i
   if res.headers["retry-after"]
     puts "   Ratelimited, retrying"
     sleep res.headers["retry-after"].to_i + 1
@@ -40,11 +41,18 @@ def get_shows(page: 1)
   p page_info
   media.each.with_index 1 do |show, i|
     puts "#{page}-#{i} Show #{show["id"]}"
+    if MODIFICATIONS["removed"].include? show["id"]
+      puts " Skipping, inelligible"
+      next
+    end
+    movie = MODIFICATIONS["movies"].include? show["id"]
+    puts " Updating format to MOVIE (manual override)" if movie
     @shows.push({
       id: show["id"],
+      mal: show["idMal"],
       terms: show["title"].values.concat(show["synonyms"]),
       img: show["coverImage"]["medium"],
-      format: show["format"]
+      format: movie ? "MOVIE" : show["format"]
     })
     get_show_characters show["id"] if show["characters"]["edges"].size > 0
   end
@@ -84,12 +92,31 @@ def get_show_characters(show_id, page: 1)
   get_show_characters show_id, page: page + 1 if page_info["hasNextPage"]
 end
 
+def get_extra_show(show_id)
+  res = anilist_request SINGLE_SHOW_QUERY, showId: show_id
+  show = JSON.parse(res.body)["data"]["Media"]
+
+  puts "Found show #{show_id}."
+  @shows.push({
+    id: show_id,
+    mal: show["idMal"],
+    terms: show["title"].values.concat(show["synonyms"]),
+    img: show["coverImage"]["medium"],
+    format: show["format"]
+  })
+  get_show_characters show_id if show["characters"]["edges"].size > 0
+end
+
 puts "Starting"
 start = Time.now
 get_shows
+puts "Getting additional shows"
+MODIFICATIONS["added"].each do |show_id|
+  get_extra_show show_id
+end
 time = Time.now - start
 puts "Finished in #{time}ms"
-File.write "../public/data/test2.json", {
+File.write "../public/data/test.json", {
   shows: @shows,
   characters: @characters
 }.to_json

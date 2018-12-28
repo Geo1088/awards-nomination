@@ -1,0 +1,21 @@
+# Get a page of shows.
+query ($showId: Int) {
+  Media(id: $showId) {
+    id
+    title {
+      romaji
+      english
+      native
+    }
+    synonyms
+    coverImage {
+      medium
+    }
+    format
+    characters {
+      edges {
+        id
+      }
+    }
+  }
+}
