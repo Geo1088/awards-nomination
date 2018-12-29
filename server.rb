@@ -8,7 +8,7 @@ c = r.connect db: 'aanoms_responses'
 
 CONFIG = YAML.load_file "config.yaml"
 
-use Rack::Session::Cookie
+use Rack::Session::Cookie, secret: CONFIG[:cookie_secret]
 use Redd::Middleware, CONFIG.merge({
   user_agent: "web:github.com/Geo1088/awards-nomination:v1.0.0 (by /u/geo1088)",
   via: "/auth/reddit",
