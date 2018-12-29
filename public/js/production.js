@@ -6,6 +6,7 @@ const app = new Vue({
 		shows: [],
 		characters: [],
 		vas: [],
+		opedOnly: [],
 		filter: '',
 		artSelections: data.art || {},
 		animationSelections: data.animation || {},
@@ -39,6 +40,8 @@ const app = new Vue({
 			switch (this.selectedTab) {
 				case 'Voice Acting':
 					return this.vas;
+				case 'OP/ED':
+					return this.shows.concat(this.opedOnly);
 				default:
 					return this.shows;
 			}
@@ -202,8 +205,9 @@ window.onbeforeunload = function () {
 fetch('/data/test.json').then(res => {
 	console.log(res);
 	return res.json();
-}).then(({shows, characters, vas}) => {
+}).then(({shows, characters, vas, opedOnly}) => {
 	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
 	app.characters = characters; // no sorting, they're never displayed
 	app.vas = vas.sort((a, b) => a.name.replace(/^\s*|\s*$/g, '').localeCompare(b.name.replace(/^\s*|\s*$/g, '')));
+	app.opedOnly = opedOnly.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
 });

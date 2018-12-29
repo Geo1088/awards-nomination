@@ -27,6 +27,7 @@ def anilist_request(query, variables = {})
 end
 
 @shows = []
+@opedOnly = []
 @characters = []
 @vas = []
 
@@ -119,7 +120,7 @@ def get_extra_show(show_id)
   puts "Found show #{show_id}."
   movie = MODIFICATIONS["movies"].include? show["id"]
   puts " Updating format to MOVIE (manual override)" if movie
-  @shows.push({
+  hash = {
     id: show_id,
     mal: show["idMal"],
     terms: show["title"].values.concat(show["synonyms"]),
@@ -127,8 +128,14 @@ def get_extra_show(show_id)
     format: movie ? "MOVIE" : show["format"],
     short: MODIFICATIONS["shorts"].include?(show["id"]),
     original: MODIFICATIONS["originals"].include?(show["id"])
-})
-  get_show_characters show_id if show["characters"]["edges"].size > 0
+  }
+  if MODIFICATIONS["opedOnly"].include? show_id
+    puts " Only eligible for OP/ED"
+    @opedOnly.push hash
+  else
+    @shows.push hash
+  end
+get_show_characters show_id if show["characters"]["edges"].size > 0
 end
 
 puts "Starting"
@@ -138,10 +145,23 @@ puts "Getting additional shows"
 MODIFICATIONS["added"].each do |show_id|
   get_extra_show show_id
 end
+puts "Getting other shows for OP/ED"
+MODIFICATIONS["opedOnly"].select {|s| !@shows.find {|ss| ss["id"] == s}}.each do |show_id|
+  get_extra_show show_id
+end
+puts "Getting other shorts"
+MODIFICATIONS["shorts"].select {|s| !@shows.find {|ss| ss["id"] == s}}.each do |show_id|
+  get_extra_show show_id
+end
+puts "Getting other movies"
+MODIFICATIONS["movies"].select {|s| !@shows.find {|ss| ss["id"] == s}}.each do |show_id|
+  get_extra_show show_id
+end
 time = Time.now - start
 puts "Finished in #{time}ms"
 File.write "../public/data/test.json", {
-  shows: @shows,
-  characters: @characters,
-  vas: @vas
+  shows: @shows.uniq {|s| s["id"]},
+  characters: @characters.uniq {|s| s["id"]},
+  vas: @vas.uniq {|s| s["id"]},
+  opedOnly: @opedOnly.uniq {|s| s["id"]}
 }.to_json
