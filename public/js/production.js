@@ -124,7 +124,14 @@ const app = new Vue({
 							/>
 						</template>
 						<template v-else-if="selectedTab === 'OP' || selectedTab === 'ED'">
-							<center> OP/ED interface soon</center>
+							<show-display
+								v-for="show in filteredShows"
+								:key="show.id"
+								:show="show"
+								noHover
+							>
+								
+							</show-display>
 						</template>
 						<template v-else>
 							<show-display

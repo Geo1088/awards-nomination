@@ -39,9 +39,10 @@ Vue.component('show-display', {
 	props: {
 		show: Object,
 		checked: Boolean,
+		noHover: Boolean,
 	},
 	template: `
-		<div :class="['media-item', {checked}]">
+		<div :class="['media-item', {checked, 'no-hover': noHover}]">
 			<div class="image" :style="\`background-image: url(\${show.img});\`">
 				<span class="check fa-stack" v-if="checked">
 					<i class="fas fa-square fa-stack-2x has-text-primary"/>
