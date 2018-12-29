@@ -152,6 +152,7 @@ Vue.component('op-ed-chooser', {
 	},
 	methods: {
 		addNewThing () {
+			if (this.things.some(thing => !thing.num)) return;
 			this.things.push({type: 'op', num: ''});
 			this.$emit('change', this.things);
 		},
