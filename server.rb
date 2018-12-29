@@ -64,6 +64,7 @@ end
 get %r{/(genres|characters|production|main)} do |route|
   authenticate!
   data = r.table(route).get(@r.me.name).run(c) || {}
+  @route = route
   erb route.to_sym, locals: {
     data: data
   }
