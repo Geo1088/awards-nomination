@@ -15,7 +15,7 @@ const app = new Vue({
 				.filter(show => {
 					switch (this.selectedTab) {
 						case 'Original Soundtrack':
-						case "Voice Acting":
+						case 'Voice Acting':
 							return true;
 						default:
 							return show.format !== 'MOVIE'
@@ -47,7 +47,7 @@ const app = new Vue({
 								'Background Art',
 								'Character Design',
 								'Cinematography',
-								'Original Soudtrack',
+								'Original Soundtrack',
 								'OP',
 								'ED',
 								'Voice Acting'
