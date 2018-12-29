@@ -99,12 +99,14 @@ def get_extra_show(show_id)
   show = JSON.parse(res.body)["data"]["Media"]
 
   puts "Found show #{show_id}."
+  movie = MODIFICATIONS["movies"].include? show["id"]
+  puts " Updating format to MOVIE (manual override)" if movie
   @shows.push({
     id: show_id,
     mal: show["idMal"],
     terms: show["title"].values.concat(show["synonyms"]),
     img: show["coverImage"]["medium"],
-    format: show["format"],
+    format: movie ? "MOVIE" : show["format"],
     short: MODIFICATIONS["shorts"].include?(show["id"]),
     original: MODIFICATIONS["originals"].include?(show["id"])
 })
