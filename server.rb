@@ -35,6 +35,7 @@ helpers do
 
   def authenticate!(sub: nil, host: false)
     redirect to "/" unless @r
+    redirect to "/" if @r.me.created > CONFIG[:epoch]
     if host
       redirect to "/" unless HOSTS.include? @r.me.name
     end
@@ -52,9 +53,13 @@ end
 # Auth stuff
 get "/login" do redirect to "/auth/reddit" end
 get "/auth/reddit/callback" do
-  redirect to "/genres" unless request.env["redd.error"]
   redirect to "/" if request.env["redd.error"] == "access_denied"
-  erb :error, locals: {error: request.env["redd.error"]}
+  return erb :error, locals: {error: request.env["redd.error"]} if request.env["redd.error"]
+  if @r.me.created > CONFIG[:epoch]
+    request.env["redd.session"] = nil
+    return erb :error, locals: {error: "Your account is too new!\nAccount created #{@r.me.created}"}
+  end
+  redirect to "/genres"
 end
 get "/logout" do
   request.env["redd.session"] = nil
