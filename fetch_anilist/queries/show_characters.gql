@@ -7,16 +7,28 @@ query ($showId: Int, $page: Int) {
         total
         perPage
       }
-      nodes {
-        id
-        name {
-          first
-          last
-          native
-          alternative
+      edges {
+        node {
+          id
+          name {
+            first
+            last
+            native
+            alternative
+          }
+          image {
+            medium
+          }
         }
-        image {
-          medium
+        voiceActors(language: JAPANESE) {
+          id
+          name {
+            first
+            last
+          }
+          image {
+            medium
+          }
         }
       }
     }

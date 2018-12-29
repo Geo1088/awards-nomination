@@ -1,24 +1,58 @@
+const data = JSON.parse(showsJSON).data || {};
 const app = new Vue({
 	el: '#app',
 	data: {
 		selectedTab: 'Art Style',
 		shows: [],
+		vas: [],
 		filter: '',
-		selections: JSON.parse(showsJSON).data || {},
+		artSelections: data.art || {},
+		animationSelections: data.animation || {},
+		backgroundSelections: data.background || {},
+		characterSelections: data.characters || {},
+		cinemaSelections: data.cinema || {},
+		ostSelections: data.ost || {},
+		opSelections: data.op || {},
+		edSelections: data.ed || {},
+		vaSelections: data.va || {},
 		showAll: false,
 		saveButtonText: 'Save Selections',
 		changesSinceSave: false,
 	},
 	computed: {
+		currentSelections () {
+			switch (this.selectedTab) {
+				case 'Art Style': return 'artSelections';
+				case 'Animation': return 'animationSelections';
+				case 'Background Art': return 'backgroundSelections';
+				case 'Character Design': return 'characterSelections';
+				case 'Cinematography': return 'cinemaSelections';
+				case "Original Soundtrack": return 'ostSelections';
+				case 'OP': return 'opSelections';
+				case 'ED': return 'edSelections';
+				case 'Voice Acting': return 'vaSelections';
+			}
+		},
+		currentSelectionsObj () {
+			return this[this.currentSelections]
+		},
+		currentList () {
+			switch (this.selectedTab) {
+				case 'Voice Acting':
+					return this.vas;
+				default:
+					return this.shows;
+			}
+		},
 		_filteredShows () {
-			return this.shows.filter(show => stringMatchesArray(this.filter, show.terms))
-				.filter(show => {
+			return this.currentList.filter(show => stringMatchesArray(this.filter, show.terms))
+				.filter(thing => {
 					switch (this.selectedTab) {
 						case 'Original Soundtrack':
 						case 'Voice Acting':
 							return true;
 						default:
-							return show.format !== 'MOVIE'
+							return thing.format !== 'MOVIE'
 					}
 				});
 		},
@@ -79,18 +113,26 @@ const app = new Vue({
 						</div>
 					</div>
 					<div class="card media-list">
-						<show-display
-							v-for="show in filteredShows"
-							:key="show.id"
-							:show="show"
-							:checked="selections[show.id] === selectedTab"
-							@click.native="setShow(show.id, selectedTab)"
-						/>
-						<div class="more-items" v-if="moreItems">
-							<p class="has-text-centered" style="flex: 1 1 100%">
-								And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
-							</p>
-						</div>
+						<template v-if="selectedTab === 'Voice Acting'">
+							<center>VA interface soon</center>
+						</template>
+						<template v-else-if="selectedTab === 'OP' || selectedTab === 'ED'">
+							<center> OP/ED interface soon</center>
+						</template>
+						<template v-else>
+							<show-display
+								v-for="show in filteredShows"
+								:key="show.id"
+								:show="show"
+								:checked="currentSelectionsObj[show.id]"
+								@click.native="setThing(show.id)"
+							/>
+							<div class="more-items" v-if="moreItems">
+								<p class="has-text-centered" style="flex: 1 1 100%">
+									And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
+								</p>
+							</div>
+						</template>
 					</div>
 				</div>
 			</section>
@@ -108,18 +150,24 @@ const app = new Vue({
 		},
 	},
 	methods: {
-		setShow (id, category) {
+		setThing (id) {
 			console.log('saa')
-			if (this.selections[id] === category) {
-				Vue.set(this.selections, id, null);
-			} else if (!this.selections[id] || confirm(`You have already selected this show for the ${this.selections[id]} category. You can only nominate a show for one category. Would you like to change it to ${category}?`)) {
-				Vue.set(this.selections, id, category);
-			}
+			Vue.set(this[this.currentSelections], id, !this.currentSelectionsObj[id]);
 		},
 		save () {
 			this.saveButtonText = "Saving..."
 			submit('/response/production', {
-				data: this.selections
+				data: {
+					art: this.artSelections,
+					animation: this.animationSelections,
+					background: this.backgroundSelections,
+					characters: this.characterSelections,
+					cinema: this.cinemaSelections,
+					ost: this.ostSelections,
+					op: this.opSelections,
+					ed: this.edSelections,
+					va: this.vaSelections,
+				}
 			}).then(() => {
 				this.changesSinceSave = false;
 				this.saveButtonText = "Saved!"
@@ -141,8 +189,7 @@ window.onbeforeunload = function () {
 fetch('/data/test.json').then(res => {
 	console.log(res);
 	return res.json();
-}).then(({characters, shows}) => {
-	console.log(characters, shows);
-	app.characters = characters.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
+}).then(({shows, vas}) => {
 	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
+	app.vas = vas.sort((a, b) => a.name.replace(/^\s*|\s*$/g, '').localeCompare(b.name.replace(/^\s*|\s*$/g, '')));
 });

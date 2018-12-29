@@ -28,6 +28,7 @@ end
 
 @shows = []
 @characters = []
+@vas = []
 
 def get_shows(page: 1)
   puts "Shows page #{page}"
@@ -66,9 +67,10 @@ def get_show_characters(show_id, page: 1)
   res = anilist_request CHARS_QUERY, page: page, showId: show_id
   data = JSON.parse(res.body)["data"]["Media"]["characters"]
   page_info = data["pageInfo"]
-  nodes = data["nodes"]
+  edges = data["edges"]
 
-  nodes.each do |character|
+  edges.each do |edge|
+    character = edge["node"]
     i = @characters.index { |c| c[:id] == character["id"]}
     unless i.nil?
       @characters[i][:show_ids].push show_id
@@ -89,6 +91,22 @@ def get_show_characters(show_id, page: 1)
       ].select {|s| s},
       img: character["image"]["medium"]
     })
+
+    vas = edge["voiceActors"]
+    vas.each do |va|
+      puts " VA #{va["id"]} for character #{character["id"]}"
+      english_va_name = [
+        va["name"]["first"],
+        va["name"]["last"]
+      ].reject(&:nil?).join " "
+      @vas.push({
+        id: va["id"],
+        name: english_name,
+        image: va["image"]["medium"],
+        show: show_id,
+        character: character["id"]
+      })
+    end
   end
 
   get_show_characters show_id, page: page + 1 if page_info["hasNextPage"]
@@ -124,5 +142,6 @@ time = Time.now - start
 puts "Finished in #{time}ms"
 File.write "../public/data/test.json", {
   shows: @shows,
-  characters: @characters
+  characters: @characters,
+  vas: @vas
 }.to_json
