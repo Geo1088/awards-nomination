@@ -11,7 +11,16 @@ const app = new Vue({
 	},
 	computed: {
 		_filteredShows () {
-			return this.shows.filter(show => stringMatchesArray(this.filter, show.terms));
+			return this.shows.filter(show => stringMatchesArray(this.filter, show.terms))
+				.filter(show => {
+					switch (this.selectedTab) {
+						case 'Original Soundtrack':
+						case "Voice Acting":
+							return true;
+						default:
+							return show.format !== 'MOVIE'
+					}
+				});
 		},
 		filteredShows () {
 			return this.showAll ? this._filteredShows : this._filteredShows.slice(0, 10);
@@ -37,7 +46,11 @@ const app = new Vue({
 								'Animation',
 								'Background Art',
 								'Character Design',
-								'Cinematography'
+								'Cinematography',
+								'Original Soudtrack',
+								'OP',
+								'ED',
+								'Voice Acting'
 							]"
 							v-model="selectedTab"
 						/>
