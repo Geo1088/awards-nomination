@@ -61,7 +61,8 @@ Vue.component('show-display', {
 		infoline () {
 			return [
 				this.format,
-				`<a href="https://anilist.co/anime/${this.show.id}" target="_blank" onclick="event.stopPropagation()">AniList</a>`
+				`<a href="https://anilist.co/anime/${this.show.id}" target="_blank" onclick="event.stopPropagation()">AniList</a>`,
+				this.show.mal && `<a href="https://myanimelist.net/anime/${this.show.mal}" target="_blank" onclick="event.stopPropagation()">MyAnimeList</a>`,
 			].filter(s => s).join(" - ")
 		},
 		format () {
