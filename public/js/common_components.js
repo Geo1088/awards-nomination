@@ -71,6 +71,7 @@ Vue.component('show-display', {
 				case 'TV_SHORT': return 'TV Short'
 				case 'MOVIE': return 'Movie'
 				case 'SPECIAL': return 'Special'
+				case 'MUSIC': return 'Music Video'
 				default: return this.show.format
 			}
 		},
