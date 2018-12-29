@@ -13,8 +13,7 @@ const app = new Vue({
 		characterSelections: data.characters || {},
 		cinemaSelections: data.cinema || {},
 		ostSelections: data.ost || {},
-		opSelections: data.op || {},
-		edSelections: data.ed || {},
+		opEdSelections: data.opEd || {},
 		vaSelections: data.va || {},
 		showAll: false,
 		saveButtonText: 'Save Selections',
@@ -29,8 +28,7 @@ const app = new Vue({
 				case 'Character Design': return 'characterSelections';
 				case 'Cinematography': return 'cinemaSelections';
 				case "Original Soundtrack": return 'ostSelections';
-				case 'OP': return 'opSelections';
-				case 'ED': return 'edSelections';
+				case 'OP/ED': return 'opEdSelections';
 				case 'Voice Acting': return 'vaSelections';
 			}
 		},
@@ -83,8 +81,7 @@ const app = new Vue({
 								'Character Design',
 								'Cinematography',
 								'Original Soundtrack',
-								'OP',
-								'ED',
+								'OP/ED',
 								'Voice Acting'
 							]"
 							v-model="selectedTab"
@@ -123,14 +120,18 @@ const app = new Vue({
 								@click.native="setThing(\`\${va.id}-\${va.show}-\${va.character}\`)"
 							/>
 						</template>
-						<template v-else-if="selectedTab === 'OP' || selectedTab === 'ED'">
+						<template v-else-if="selectedTab === 'OP/ED'">
 							<show-display
 								v-for="show in filteredShows"
 								:key="show.id"
 								:show="show"
+								:checked="(opEdSelections[show.id] || []).length"
 								noHover
 							>
-								
+								<op-ed-chooser
+									@change="chooserChange(show.id, $event)"
+									:selections="opEdSelections[show.id] || []"
+								/>
 							</show-display>
 						</template>
 						<template v-else>
@@ -144,7 +145,7 @@ const app = new Vue({
 						</template>
 						<div class="more-items" v-if="moreItems">
 							<p class="has-text-centered" style="flex: 1 1 100%">
-								And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
+								And <b>{{moreItems}}</b> more (<a @click="showAll = true">Show all</a>)
 							</p>
 						</div>
 					</div>
@@ -155,18 +156,16 @@ const app = new Vue({
 			</div>
 		</div>
 	`,
-	watch: {
-		selections: {
-			handler () {
-				this.changesSinceSave = true
-			},
-			deep: true
-		},
-	},
 	methods: {
 		setThing (id) {
 			console.log('saa')
 			Vue.set(this[this.currentSelections], id, !this.currentSelectionsObj[id]);
+			this.changesSinceSave = true;
+		},
+		chooserChange (showId, val) {
+			console.log('chooserChange', showId, val);
+			Vue.set(this.opEdSelections, showId, val);
+			this.changesSinceSave = true;
 		},
 		save () {
 			this.saveButtonText = "Saving..."
@@ -178,8 +177,7 @@ const app = new Vue({
 					characters: this.characterSelections,
 					cinema: this.cinemaSelections,
 					ost: this.ostSelections,
-					op: this.opSelections,
-					ed: this.edSelections,
+					opEd: this.opEdSelections,
 					va: this.vaSelections,
 				}
 			}).then(() => {
