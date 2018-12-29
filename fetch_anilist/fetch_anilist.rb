@@ -101,7 +101,7 @@ def get_show_characters(show_id, page: 1)
       ].reject(&:nil?).join " "
       @vas.push({
         id: va["id"],
-        name: english_name,
+        name: english_va_name,
         image: va["image"]["medium"],
         show: show_id,
         character: character["id"]

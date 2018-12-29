@@ -4,6 +4,7 @@ const app = new Vue({
 	data: {
 		selectedTab: 'Art Style',
 		shows: [],
+		characters: [],
 		vas: [],
 		filter: '',
 		artSelections: data.art || {},
@@ -45,7 +46,7 @@ const app = new Vue({
 			}
 		},
 		_filteredShows () {
-			return this.currentList.filter(show => stringMatchesArray(this.filter, show.terms))
+			return this.currentList.filter(thing => stringMatchesArray(this.filter, thing.terms || [thing.name, ...(this.characters.find(c => c.id === thing.character).terms || []), ...(this.shows.find(c => c.id === thing.show).terms || [])]))
 				.filter(thing => {
 					switch (this.selectedTab) {
 						case 'Original Soundtrack':
@@ -107,14 +108,20 @@ const app = new Vue({
 									</button>
 								</p>
 								<p class="control is-expanded">
-									<input class="input" type="text" placeholder="Find a show..." v-model="filter">
+									<input class="input" type="text" :placeholder="\`Find a \${selectedTab === 'Voice Acting' ? 'voice actor' : 'show'}...\`" v-model="filter">
 								</p>
 							</div>
 						</div>
 					</div>
 					<div class="card media-list">
 						<template v-if="selectedTab === 'Voice Acting'">
-							<center>VA interface soon</center>
+							<va-display
+								v-for="va in filteredShows"
+								:key="\`\${va.id}-\${va.show}-\${va.character}\`"
+								:va="va"
+								:checked="currentSelectionsObj[\`\${va.id}-\${va.show}-\${va.character}\`]"
+								@click.native="setThing(\`\${va.id}-\${va.show}-\${va.character}\`)"
+							/>
 						</template>
 						<template v-else-if="selectedTab === 'OP' || selectedTab === 'ED'">
 							<center> OP/ED interface soon</center>
@@ -127,12 +134,12 @@ const app = new Vue({
 								:checked="currentSelectionsObj[show.id]"
 								@click.native="setThing(show.id)"
 							/>
-							<div class="more-items" v-if="moreItems">
-								<p class="has-text-centered" style="flex: 1 1 100%">
-									And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
-								</p>
-							</div>
 						</template>
+						<div class="more-items" v-if="moreItems">
+							<p class="has-text-centered" style="flex: 1 1 100%">
+								And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -189,7 +196,8 @@ window.onbeforeunload = function () {
 fetch('/data/test.json').then(res => {
 	console.log(res);
 	return res.json();
-}).then(({shows, vas}) => {
+}).then(({shows, characters, vas}) => {
 	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
+	app.characters = characters; // no sorting, they're never displayed
 	app.vas = vas.sort((a, b) => a.name.replace(/^\s*|\s*$/g, '').localeCompare(b.name.replace(/^\s*|\s*$/g, '')));
 });
