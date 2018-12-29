@@ -69,6 +69,7 @@ const app = new Vue({
 					<div class="container">
 						<h2 class="title is-size-1 is-size-2-mobile">Production Awards</h2>
 						<p class="subtitle is-size-4 is-size-5-mobile">Pick the shows from the year that excelled in various technical aspects.</p>
+						<p>Use <a href="http://anisonpreviews.com/" style="text-decoration: underline;">anisonpreviews.com</a> to reference OP/ED numbers for that category.</p>
 					</div>
 				</div>
 				<div class="hero-foot">
