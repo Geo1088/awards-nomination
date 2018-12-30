@@ -467,7 +467,7 @@
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx100657-cGCLU1m5aHjj.jpg",
 			"format": "SPECIAL",
-			"short": false,
+			"short": true,
 			"original": false
 		},
 		{
@@ -1016,7 +1016,7 @@
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx102781-HYTPu1Enpp0a.png",
 			"format": "SPECIAL",
-			"short": false,
+			"short": true,
 			"original": false
 		},
 		{
@@ -1070,7 +1070,7 @@
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx101042-ylAUwu6Fyr51.jpg",
 			"format": "TV_SHORT",
-			"short": false,
+			"short": true,
 			"original": false
 		},
 		{
@@ -1850,7 +1850,7 @@
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx100790-2fDgKG7PWaWD.jpg",
 			"format": "TV_SHORT",
-			"short": false,
+			"short": true,
 			"original": false
 		},
 		{
@@ -1991,7 +1991,7 @@
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx101981-wyiEHBWBkBBN.jpg",
 			"format": "TV_SHORT",
-			"short": false,
+			"short": true,
 			"original": false
 		},
 		{
@@ -2548,7 +2548,7 @@
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx101970-fvdeZLRnXEuX.jpg",
 			"format": "OVA",
-			"short": false,
+			"short": true,
 			"original": true
 		},
 		{
@@ -2649,7 +2649,7 @@
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx101374-CYMgGKFCyyH3.jpg",
 			"format": "OVA",
-			"short": false,
+			"short": true,
 			"original": false
 		},
 		{
@@ -4325,7 +4325,7 @@
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx101571-9f5xmj17S6aJ.jpg",
 			"format": "ONA",
 			"short": true,
-			"original": false
+			"original": true
 		}
 	],
 	"characters": [
