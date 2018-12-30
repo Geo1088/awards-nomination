@@ -18,6 +18,7 @@ use Redd::Middleware, CONFIG.merge({
 
 set :bind, "0.0.0.0"
 set :port, ENV["PORT"] || 4567
+set :environment, CONFIG[:environment]
 
 before do
   @r = request.env["redd.session"]
