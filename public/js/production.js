@@ -129,7 +129,7 @@ const app = new Vue({
 								v-for="show in filteredShows"
 								:key="show.id"
 								:show="show"
-								:checked="(opEdSelections[show.id] || []).length"
+								:checked="!!(opEdSelections[show.id] || []).length"
 								noHover
 							>
 								<op-ed-chooser
