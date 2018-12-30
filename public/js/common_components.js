@@ -117,7 +117,7 @@ Vue.component('va-display', {
 	},
 	template: `
 	<div :class="['media-item', {checked}]">
-		<div class="image" :style="\`background-image: url(\${va.image});\`">
+		<div class="image" :style="\`background-image: url(\${character.img});\`">
 			<span class="check fa-stack" v-if="checked">
 				<i class="fas fa-square fa-stack-2x has-text-primary"/>
 				<i class="fas fa-check fa-stack-1x has-text-white"/>
@@ -133,10 +133,14 @@ Vue.component('va-display', {
 	</div>
 	`,
 	computed: {
+		character () {
+			return this.$root.characters.find(c => c.id === this.va.character);
+		},
+		show () {
+			return this.$root.shows.find(s => s.id === this.va.show)
+		},
 		infoline () {
-			const character = this.$root.characters.find(c => c.id === this.va.character)
-			const show = this.$root.shows.find(s => s.id === this.va.show)
-			return `Voicing <a href="https://anilist.co/character/${character.id}" onclick="event.stopPropagation()">${character.terms[0]}</a> in <a href="https://anilist.co/anime/${show.id}" onclick="event.stopPropagation()">${show.terms[0]}</a>`
+			return `Voicing <a href="https://anilist.co/character/${this.character.id}" onclick="event.stopPropagation()">${this.character.terms[0]}</a> in <a href="https://anilist.co/anime/${this.show.id}" onclick="event.stopPropagation()">${this.show.terms[0]}</a>`
 		},
 	},
 })
