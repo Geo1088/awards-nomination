@@ -1,6 +1,34 @@
 {
 	"shows": [
 		{
+			"id": 100661,
+			"mal": null,
+			"terms": [
+				"Hugtto! Precure",
+				"Hugtto! Precure",
+				"HuGっと！プリキュア",
+				"Hugtto! Pretty Cure",
+				"Hug tto! Precure"
+			],
+			"img": "https://s3.anilist.co/media/anime/cover/small/nx100661-Wn8zIkDkUe17.jpg",
+			"format": "TV",
+			"short": false,
+			"original": true
+		},
+		{
+			"id": 98562,
+			"mal": null,
+			"terms": [
+				"Babel no Toshokan",
+				"Babel no Toshokan",
+				"バベルの図書館"
+			],
+			"img": "https://s3.anilist.co/media/manga/cover/small/98562-UG39dqCD6OTu.jpg",
+			"format": "TV",
+			"short": false,
+			"original": false
+		},
+		{
 			"id": 102941,
 			"mal": 36894,
 			"terms": [
@@ -4302,6 +4330,202 @@
 		}
 	],
 	"characters": [
+		{
+			"id": 5449,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Nagisa Misumi",
+				"美墨なぎさ",
+				"Cure Black",
+				"Natalie Blackstone"
+			],
+			"img": "https://s3.anilist.co/character/medium/n5449-Z6wIxsgB8bPs.png"
+		},
+		{
+			"id": 5454,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Honoka Yukishiro",
+				"雪城ほのか",
+				"Cure White",
+				"Hannah Whitehouse"
+			],
+			"img": "https://s3.anilist.co/character/medium/5454-wz1CwrfH8xab.png"
+		},
+		{
+			"id": 125496,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Homare Kagayaki",
+				"輝木 ほまれ",
+				"Cure Étoile"
+			],
+			"img": "https://s3.anilist.co/character/medium/125496-OEcU8t0kb0V3.png"
+		},
+		{
+			"id": 125497,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Hana Nono",
+				"野乃 はな",
+				"Cure Yell"
+			],
+			"img": "https://s3.anilist.co/character/medium/125497-Lo608wluUILq.png"
+		},
+		{
+			"id": 125498,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Saaya Yakushiji",
+				"薬師寺 さあや",
+				"Cure Ange"
+			],
+			"img": "https://s3.anilist.co/character/medium/125498-7p4HqDlDZd0C.png"
+		},
+		{
+			"id": 125499,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Hug-tan",
+				"はぐたん",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/125499-gEy1upYpKK5J.png"
+		},
+		{
+			"id": 125822,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Ruru Amour",
+				"ルールー",
+				"Lulu",
+				"RUR-9500",
+				"Cure Amour"
+			],
+			"img": "https://s3.anilist.co/character/medium/125822-IncumIBrkraB.png"
+		},
+		{
+			"id": 125961,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Hariham Hari",
+				"ハリハム・ハリー",
+				"Harryham Harry"
+			],
+			"img": "https://s3.anilist.co/character/medium/125961-QrWPZBzw0z24.jpg"
+		},
+		{
+			"id": 126225,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Emiru Aisaki",
+				"愛崎えみる",
+				"Cure Má Chérie"
+			],
+			"img": "https://s3.anilist.co/character/medium/n126225-dtUkFrWDojfv.png"
+		},
+		{
+			"id": 127941,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Bishin",
+				"ビシン",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n127941-Lo23rJDxc0bs.png"
+		},
+		{
+			"id": 127942,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Geros",
+				"ジェロス",
+				"Gelos"
+			],
+			"img": "https://s3.anilist.co/character/medium/n127942-sTGlzAPInpRj.png"
+		},
+		{
+			"id": 127943,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Papple",
+				"パップル",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n127943-oMSjBLASlYNo.png"
+		},
+		{
+			"id": 127944,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Charaleet",
+				"チャラリート",
+				"Charalit"
+			],
+			"img": "https://s3.anilist.co/character/medium/n127944-WrWXEateyv3m.png"
+		},
+		{
+			"id": 129196,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Henri Wakamiya",
+				"若宮アンリ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n129196-NpVygqEY4ASx.jpg"
+		},
+		{
+			"id": 129197,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"George Kurai",
+				"ジョージクライイ",
+				"President Kurai"
+			],
+			"img": "https://s3.anilist.co/character/medium/n129197-o182sn8Pt9tQ.png"
+		},
+		{
+			"id": 129198,
+			"show_ids": [
+				100661
+			],
+			"terms": [
+				"Doctor Traum",
+				"ドクタートラウム",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n129198-QELCd1lRTDWd.png"
+		},
 		{
 			"id": 2456,
 			"show_ids": [
@@ -33417,6 +33641,118 @@
 		}
 	],
 	"vas": [
+		{
+			"id": 95769,
+			"name": "Youko Honna",
+			"image": "https://s3.anilist.co/staff/medium/n95769-nR18ewc78vzz.png",
+			"show": 100661,
+			"character": 5449
+		},
+		{
+			"id": 95140,
+			"name": " Yukana",
+			"image": "https://s3.anilist.co/staff/medium/140.jpg",
+			"show": 100661,
+			"character": 5454
+		},
+		{
+			"id": 105981,
+			"name": "Yui Ogura",
+			"image": "https://s3.anilist.co/staff/medium/105981-V7ySgKdwSzjd.jpg",
+			"show": 100661,
+			"character": 125496
+		},
+		{
+			"id": 124802,
+			"name": "Rie Hikisaka",
+			"image": "https://s3.anilist.co/staff/medium/124802-BoT8VcIGgkYv.jpg",
+			"show": 100661,
+			"character": 125497
+		},
+		{
+			"id": 125577,
+			"name": "Rina Hon'izumi",
+			"image": "https://s3.anilist.co/staff/medium/125577-2FgmxQ4qbShQ.jpg",
+			"show": 100661,
+			"character": 125498
+		},
+		{
+			"id": 113451,
+			"name": "Konomi Tada",
+			"image": "https://s3.anilist.co/staff/medium/18451.jpg",
+			"show": 100661,
+			"character": 125499
+		},
+		{
+			"id": 95027,
+			"name": "Yukari Tamura",
+			"image": "https://s3.anilist.co/staff/medium/95027-cbsOgg0DEr9g.jpg",
+			"show": 100661,
+			"character": 125822
+		},
+		{
+			"id": 95277,
+			"name": "Junko Noda",
+			"image": "https://s3.anilist.co/staff/medium/277.jpg",
+			"show": 100661,
+			"character": 125961
+		},
+		{
+			"id": 116243,
+			"name": "Nao Tamura",
+			"image": "https://s3.anilist.co/staff/medium/n116243-Z3OR54VE2IGX.png",
+			"show": 100661,
+			"character": 126225
+		},
+		{
+			"id": 95124,
+			"name": "Satomi Arai",
+			"image": "https://s3.anilist.co/staff/medium/n95124-p37I1zFxpru3.png",
+			"show": 100661,
+			"character": 127941
+		},
+		{
+			"id": 95428,
+			"name": "Yuko Kaida",
+			"image": "https://s3.anilist.co/staff/medium/n95428-uPb8A6lzWfgS.png",
+			"show": 100661,
+			"character": 127942
+		},
+		{
+			"id": 95092,
+			"name": "Sayaka Oohara",
+			"image": "https://s3.anilist.co/staff/medium/n95092-F2kDXhXMIKCI.png",
+			"show": 100661,
+			"character": 127943
+		},
+		{
+			"id": 119506,
+			"name": "Fukushi Ochiai",
+			"image": "https://s3.anilist.co/staff/medium/24506-r76E93XZYYpX.jpg",
+			"show": 100661,
+			"character": 127944
+		},
+		{
+			"id": 120209,
+			"name": "Toshiyuki Someya",
+			"image": "https://s3.anilist.co/staff/medium/120209-hfHTB3k0SmG8.jpg",
+			"show": 100661,
+			"character": 129196
+		},
+		{
+			"id": 105694,
+			"name": "Junpei Morita",
+			"image": "https://s3.anilist.co/staff/medium/n105694-rfYpkYacbQYr.png",
+			"show": 100661,
+			"character": 129197
+		},
+		{
+			"id": 100427,
+			"name": "Takaya Hashi",
+			"image": "https://s3.anilist.co/staff/medium/n100427-rXj5mx6gGNfH.png",
+			"show": 100661,
+			"character": 129198
+		},
 		{
 			"id": 96764,
 			"name": "Kouki Uchiyama",
