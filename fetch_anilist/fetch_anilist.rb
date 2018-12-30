@@ -162,6 +162,6 @@ puts "Finished in #{time}ms"
 File.write "../public/data/test.json", {
   shows: @shows.uniq {|s| s[:id]},
   characters: @characters.uniq {|s| s[:id]},
-  vas: @vas.uniq {|s| "#{s["id"]}-#{s["show"]}-#{s["character"]}"},
+  vas: @vas.uniq {|s| "#{s[:id]}-#{s[:show]}-#{s[:character]}"},
   opedOnly: @opedOnly.uniq {|s| s[:id]}
 }.to_json
