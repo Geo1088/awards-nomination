@@ -3709,7 +3709,7 @@
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx21778-zTlD0Z0NJqAL.png",
 			"format": "OVA",
-			"short": true,
+			"short": false,
 			"original": false
 		},
 		{
