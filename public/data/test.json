@@ -982,12 +982,12 @@
 			"mal": 35466,
 			"terms": [
 				"ReLIFE Kanketsu-hen",
-				"ReLIFE OVA",
+ 				"ReLIFE OVA",
 				"ReLIFE 完結編"
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx98635-FyHK34rRXrcN.jpg",
 			"format": "TV",
-			"short": true,
+			"short": false,
 			"original": false
 		},
 		{
