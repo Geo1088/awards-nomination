@@ -47,7 +47,7 @@ const app = new Vue({
 			}
 		},
 		_filteredShows () {
-			return this.currentList.filter(thing => stringMatchesArray(this.filter, thing.terms || [thing.name, ...(this.characters.find(c => c.id === thing.character).terms || []), ...(this.shows.find(c => c.id === thing.show).terms || [])]))
+			return this.currentList.filter(thing => stringMatchesArray(this.filter, thing.terms))
 				.filter(thing => {
 					switch (this.selectedTab) {
 						case 'Original Soundtrack':
@@ -208,6 +208,17 @@ fetch('/data/test.json').then(res => {
 }).then(({shows, characters, vas, opedOnly}) => {
 	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
 	app.characters = characters; // no sorting, they're never displayed
-	app.vas = vas.sort((a, b) => a.name.replace(/^\s*|\s*$/g, '').localeCompare(b.name.replace(/^\s*|\s*$/g, '')));
+	app.vas = vas
+		.map(va => {
+			const show = shows.find(show => show.id === va.show);
+			const character = characters.find(character => character.id === va.character);
+			va.terms = [
+				va.name,
+				...(show ? show.terms : []),
+				...(character ? character.terms : [])
+			];
+			return va;
+		})
+		.sort((a, b) => a.name.replace(/^\s*|\s*$/g, '').localeCompare(b.name.replace(/^\s*|\s*$/g, '')));
 	app.opedOnly = opedOnly.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
 });
