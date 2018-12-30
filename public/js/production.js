@@ -79,8 +79,8 @@ const app = new Vue({
 					<div class="container">
 						<tab-bar
 							:tabs="[
-								'Art Style',
 								'Animation',
+								'Art Style',
 								'Background Art',
 								'Character Design',
 								'Cinematography',
