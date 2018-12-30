@@ -136,7 +136,7 @@ Vue.component('va-display', {
 		infoline () {
 			const character = this.$root.characters.find(c => c.id === this.va.character)
 			const show = this.$root.shows.find(s => s.id === this.va.show)
-			return `Voicing <a href="${character.id}" onclick="event.stopPropagation()">${character.terms[0]}</a> in <a href="https://anilist.co/anime/${show.id}" onclick="event.stopPropagation()">${show.terms[0]}</a>`
+			return `Voicing <a href="https://anilist.co/character/${character.id}" onclick="event.stopPropagation()">${character.terms[0]}</a> in <a href="https://anilist.co/anime/${show.id}" onclick="event.stopPropagation()">${show.terms[0]}</a>`
 		},
 	},
 })
