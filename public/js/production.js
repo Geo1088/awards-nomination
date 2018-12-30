@@ -50,11 +50,11 @@ const app = new Vue({
 			return this.currentList.filter(thing => stringMatchesArray(this.filter, thing.terms))
 				.filter(thing => {
 					switch (this.selectedTab) {
-						case 'Original Soundtrack':
 						case 'Voice Acting':
-							return true;
+						case 'Original Soundtrack':
+							return thing.format !== 'MUSIC';
 						default:
-							return thing.format !== 'MOVIE'
+							return thing.format !== 'MUSIC' && thing.format !== 'MOVIE'
 					}
 				});
 		},
