@@ -34,7 +34,7 @@ const app = new Vue({
 						<tab-bar
 							:tabs="[
 								'Action',
-								'Adventure',
+								'Adventure/Fantasy',
 								'Comedy',
 								'Drama',
 								'Romance',
