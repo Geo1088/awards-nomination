@@ -62,6 +62,8 @@ const app = new Vue({
 					switch (this.selectedTab) {
 						case 'Voice Acting':
 							return this.currentSelectionsObj[`${thing.id}-${thing.show}-${thing.character}`];
+						case 'OP/ED':
+							return (this.currentSelectionsObj[thing.id] || []).length
 						default:
 							return this.currentSelectionsObj[thing.id];
 					}
