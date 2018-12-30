@@ -2,6 +2,8 @@
 
 2018 is just about over and with the final shows of Fall wrapping up, it’s time to officially decide which shows we loved the most! Here's a quick introduction to our terms and process if you are unfamiliar. Once you feel confident you know how it all works, select a category and get to nominating!
 
+---
+
 ## What are the /r/Anime Awards?
 
 As the name suggests, the /r/Anime awards are created to honor the best anime of the year from the perspective of the /r/anime subreddit. We will be choosing the best shows, characters, soundtracks, and many other categories that you can find on this nomination website. /r/Anime is its own community, and there’s not going to be a single reviewer or awards show whose verdict we will agree with completely, so we've made our own! This is our third year, and we're striving to make it even better this time around.
@@ -80,6 +82,7 @@ The Main Awards are the most important of them all, the culmination of the best 
 Every category will have 4 public nominees, except for AOTY, OP and ED which will have 5 public nominees each. After these are determined, up to 4 more will be chosen by groups of jurors who have spent the last two months getting familiar with and discussing the options in their categories and who will be required to watch all of the chosen nominations in their categories before the final results.
 
 The final nominations will eventually be ranked by public vote and by the juries, and both will be displayed equally in the final results thread and announced in the results livestream.
+
 ---
 
 ## How did we determine what is eligible for this year?
