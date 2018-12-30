@@ -203,9 +203,9 @@ window.onbeforeunload = function () {
 fetch('/data/test.json').then(res => {
 	return res.json();
 }).then(({shows, characters, vas, opedOnly}) => {
-	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
+	app.shows = shuffle(shows);
 	app.characters = characters; // no sorting, they're never displayed
-	app.vas = vas
+	app.vas = shuffle(vas
 		.filter(va => {
 			const show = shows.find(show => show.id === va.show);
 			const character = characters.find(character => character.id === va.character);
@@ -220,7 +220,6 @@ fetch('/data/test.json').then(res => {
 				...(character ? character.terms : [])
 			];
 			return va;
-		})
-		.sort((a, b) => a.name.replace(/^\s*|\s*$/g, '').localeCompare(b.name.replace(/^\s*|\s*$/g, '')));
-	app.opedOnly = opedOnly.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
+		}));
+	app.opedOnly = shuffle(opedOnly);
 });

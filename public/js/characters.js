@@ -10,7 +10,7 @@ const app = new Vue({
 		showSelections: data.shows || {},
 		characterSelections: data.characters || {},
 		antagSelections: data.antagonists || {},
-		showAll: false,
+		showSelected: false,
 		saveButtonText: 'Save Selections',
 		changesSinceSave: false,
 	},
@@ -20,10 +20,21 @@ const app = new Vue({
 		},
 		_filtered () {
 			return this.currentList.filter(show => stringMatchesArray(this.filter, show.terms))
-				.filter(show => show.format !== 'MUSIC');
+				.filter(show => show.format !== 'MUSIC')
+				.filter(thing => {
+					if (!this.showSelected) return true;
+					switch (this.selectedTab) {
+						case 'Overall Cast':
+							return this.showSelections[thing.id];
+						case 'Antagonist':
+							return this.antagSelections[thing.id];
+						default:
+							return this.characterSelections[thing.id] === this.selectedTab;
+					}
+				});
 		},
 		filtered () {
-			return this.showAll ? this._filtered : this._filtered.slice(0, 10);
+			return this.showSelected ? this._filtered : this._filtered.slice(0, 50);
 		},
 		moreItems () {
 			return this._filtered.length - this.filtered.length;
@@ -67,8 +78,8 @@ const app = new Vue({
 						<div class="level-right">
 							<div class="field is-grouped">
 								<p class="control">
-									<button :class="{button: true, 'is-link': showAll}" @click="showAll = !showAll">
-										Show{{showAll ? 'ing' : ''}} All
+									<button :class="{button: true, 'is-link': showSelected}" @click="showSelected = !showSelected">
+										Show{{showSelected ? 'ing' : ''}} Selected
 									</button>
 								</p>
 								<p class="control is-expanded">
@@ -86,11 +97,6 @@ const app = new Vue({
 								:checked="showSelections[show.id]"
 								@click.native="toggleShow(show.id)"
 							/>
-							<div class="more-items" v-if="moreItems">
-								<p class="has-text-centered" style="flex: 1 1 100%">
-									And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
-								</p>
-							</div>
 						</template>
 						<template v-else>
 							<character-display
@@ -100,12 +106,12 @@ const app = new Vue({
 								:checked="selectedTab === 'Antagonist' ? antagSelections[character.id] : characterSelections[character.id] === selectedTab"
 								@click.native="setCharacter(character.id, selectedTab)"
 							/>
-							<div class="more-items" v-if="moreItems">
-								<p class="has-text-centered" style="flex: 1 1 100%">
-									And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
-								</p>
-							</div>
 						</template>
+						<div class="more-items" v-if="moreItems">
+							<p class="has-text-centered" style="flex: 1 1 100%">
+								And <b>{{moreItems}}</b> more (Use the search box to filter)
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -172,6 +178,6 @@ window.onbeforeunload = function () {
 fetch('/data/test.json').then(res => {
 	return res.json();
 }).then(({characters, shows}) => {
-	app.characters = characters.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
-	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
+	app.characters = shuffle(characters);
+	app.shows = shuffle(shows);
 });

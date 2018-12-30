@@ -154,7 +154,6 @@ window.onbeforeunload = function () {
 
 fetch('/data/test.json').then(res => {
 	return res.json();
-}).then(({characters, shows}) => {
-	app.characters = characters.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
-	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
+}).then(({shows}) => {
+	app.shows = shuffle(shows);
 });
