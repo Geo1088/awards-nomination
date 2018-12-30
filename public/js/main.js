@@ -25,7 +25,7 @@ const app = new Vue({
 						case 'Best Short':
 							return show.short
 						case 'Anime of the Year':
-							return !show.short && show.format !== 'MOVIE'
+							return !show.short && show.format !== 'MOVIE' && show.format !== 'MUSIC'
 					}
 				});
 		},

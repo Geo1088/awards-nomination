@@ -19,7 +19,8 @@ const app = new Vue({
 			return this.selectedTab === 'Overall Cast' ? this.shows : this.characters;
 		},
 		_filtered () {
-			return this.currentList.filter(show => stringMatchesArray(this.filter, show.terms));
+			return this.currentList.filter(show => stringMatchesArray(this.filter, show.terms))
+				.filter(show => show.format !== 'MUSIC');
 		},
 		filtered () {
 			return this.showAll ? this._filtered : this._filtered.slice(0, 10);

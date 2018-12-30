@@ -11,7 +11,8 @@ const app = new Vue({
 	},
 	computed: {
 		_filteredShows () {
-			return this.shows.filter(show => stringMatchesArray(this.filter, show.terms));
+			return this.shows.filter(show => stringMatchesArray(this.filter, show.terms))
+				.filter(show => show.format !== 'MUSIC');
 		},
 		filteredShows () {
 			return this.showAll ? this._filteredShows : this._filteredShows.slice(0, 10);
