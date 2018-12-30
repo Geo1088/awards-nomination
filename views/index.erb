@@ -2,16 +2,20 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title is-size-1 is-size-2-mobile">The /r/anime Awards</h1>
-      <p class="subtitle is-size-4 is-size-5-mobile">Public Nominations</p>
+      <p class="subtitle is-size-4 is-size-5-mobile">
+        <% if @r %>
+          Fill out your nominations in the tabs above. Read on for an introduction.
+        <% else %>
+          Read the introduction below, then sign in with Reddit to nominate.
+        <% end %>
+      </p>
     </div>
   </div>
 </div>
-<div class="section">
-  <p class="container">
-    <% if @r %>
-      Hi <%= @r.me.name %>, check the nomination categories in the navbar or <a href="/logout">log out</a>
-    <% else %>
-      <a href="/login">Log in with Reddit</a>
-    <% end %>
-  </p>
+<div class="container">
+  <div class="section">
+    <div class="content">
+      <%= markdown :index %>
+    </div>
+  </div>
 </div>

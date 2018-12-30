@@ -3,4 +3,5 @@ source "https://rubygems.org" do
   gem "redd"
   gem "rethinkdb"
   gem "httparty"
+  gem "kramdown"
 end
