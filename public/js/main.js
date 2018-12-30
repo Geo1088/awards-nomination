@@ -9,7 +9,7 @@ const app = new Vue({
 		shortSelections: data.shorts || {},
 		originalSelections: data.originals || {},
 		aotySelections: data.aoty || {},
-		showAll: false,
+		showSelected: false,
 		saveButtonText: 'Save Selections',
 		changesSinceSave: false,
 	},
@@ -27,10 +27,14 @@ const app = new Vue({
 						case 'Anime of the Year':
 							return !show.short && show.format !== 'MOVIE' && show.format !== 'MUSIC'
 					}
+				})
+				.filter(thing => {
+					if (!this.showSelected) return true;
+					return this.currentSelectionsObj[thing.id];
 				});
 		},
 		filteredShows () {
-			return this.showAll ? this._filteredShows : this._filteredShows.slice(0, 10);
+			return this.showSelected ? this._filteredShows : this._filteredShows.slice(0, 50);
 		},
 		moreItems () {
 			return this._filteredShows.length - this.filteredShows.length;
@@ -82,8 +86,8 @@ const app = new Vue({
 						<div class="level-right">
 							<div class="field is-grouped">
 								<p class="control">
-									<button :class="{button: true, 'is-link': showAll}" @click="showAll = !showAll">
-										Show{{showAll ? 'ing' : ''}} All
+									<button :class="{button: true, 'is-link': showSelected}" @click="showSelected = !showSelected">
+										Show{{showSelected ? 'ing' : ''}} Selected
 									</button>
 								</p>
 								<p class="control is-expanded">
@@ -102,7 +106,7 @@ const app = new Vue({
 						/>
 						<div class="more-items" v-if="moreItems">
 							<p class="has-text-centered" style="flex: 1 1 100%">
-								And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
+								And <b>{{moreItems}}</b> more (Use the search box to filter)
 							</p>
 						</div>
 					</div>
