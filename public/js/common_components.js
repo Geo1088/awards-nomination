@@ -121,7 +121,10 @@ Vue.component('character-display', {
 			return `From ${this.shownames.join(', ')}`
 		},
 		shownames () {
-			return this.character.show_ids.map(id => `<a href="https://anilist.co/anime/${id}" target="_blank" onclick="event.stopPropagation()"><i>${this.$root.shows.find(s => s.id === id).terms[0].replace(/&/g, '&amp;').replace(/</g, '&lt;')}</i></a>`)
+			return this.character.show_ids.map(id => {
+				if (this.character.disableAnilist) return this.$root.shows.find(s => s.id === id).terms[0].replace(/&/g, '&amp;').replace(/</g, '&lt;');
+				return `<a href="https://anilist.co/anime/${id}" target="_blank" onclick="event.stopPropagation()"><i>${this.$root.shows.find(s => s.id === id).terms[0].replace(/&/g, '&amp;').replace(/</g, '&lt;')}</i></a>`;
+			})
 		}
 	}
 })
