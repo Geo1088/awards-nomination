@@ -5,17 +5,18 @@ const app = new Vue({
 		shows: [],
 		filter: '',
 		selections: JSON.parse(showsJSON).data || {},
-		showAll: false,
+		showSelected: false,
 		saveButtonText: 'Save Selections',
 		changesSinceSave: false,
 	},
 	computed: {
 		_filteredShows () {
 			return this.shows.filter(show => stringMatchesArray(this.filter, show.terms))
-				.filter(show => show.format !== 'MUSIC');
+				.filter(show => show.format !== 'MUSIC')
+				.filter(show => this.showSelected ? this.selections[show.id] === this.selectedTab : true);
 		},
 		filteredShows () {
-			return this.showAll ? this._filteredShows : this._filteredShows.slice(0, 10);
+			return this.showSelected ? this._filteredShows : this._filteredShows.slice(0, 50);
 		},
 		moreItems () {
 			return this._filteredShows.length - this.filteredShows.length;
@@ -58,8 +59,8 @@ const app = new Vue({
 						<div class="level-right">
 							<div class="field is-grouped">
 								<p class="control">
-									<button :class="{button: true, 'is-link': showAll}" @click="showAll = !showAll">
-										Show{{showAll ? 'ing' : ''}} All
+									<button :class="{button: true, 'is-link': showSelected}" @click="showSelected = !showSelected">
+										Show{{showSelected ? 'ing' : ''}} Selected
 									</button>
 								</p>
 								<p class="control is-expanded">
@@ -78,7 +79,7 @@ const app = new Vue({
 						/>
 						<div class="more-items" v-if="moreItems">
 							<p class="has-text-centered" style="flex: 1 1 100%">
-								And <b>{{moreItems}}</b> more (<a @click="$root.showAll = true">Show all</a>)
+								And <b>{{moreItems}}</b> more (Use the search box to filter)
 							</p>
 						</div>
 					</div>
@@ -129,7 +130,6 @@ window.onbeforeunload = function () {
 
 fetch('/data/test.json').then(res => {
 	return res.json();
-}).then(({characters, shows}) => {
-	app.characters = characters.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
-	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
+}).then(({shows}) => {
+	app.shows = shuffle(shows);
 });
