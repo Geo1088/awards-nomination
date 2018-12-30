@@ -2,7 +2,7 @@ const data = JSON.parse(showsJSON).data || {};
 const app = new Vue({
 	el: '#app',
 	data: {
-		selectedTab: 'Art Style',
+		selectedTab: 'Animation',
 		shows: [],
 		characters: [],
 		vas: [],
@@ -162,12 +162,10 @@ const app = new Vue({
 	`,
 	methods: {
 		setThing (id) {
-			console.log('saa')
 			Vue.set(this[this.currentSelections], id, !this.currentSelectionsObj[id]);
 			this.changesSinceSave = true;
 		},
 		chooserChange (showId, val) {
-			console.log('chooserChange', showId, val);
 			Vue.set(this.opEdSelections, showId, val);
 			this.changesSinceSave = true;
 		},
@@ -203,12 +201,16 @@ window.onbeforeunload = function () {
 }
 
 fetch('/data/test.json').then(res => {
-	console.log(res);
 	return res.json();
 }).then(({shows, characters, vas, opedOnly}) => {
 	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
 	app.characters = characters; // no sorting, they're never displayed
 	app.vas = vas
+		.filter(va => {
+			const show = shows.find(show => show.id === va.show);
+			const character = characters.find(character => character.id === va.character);
+			return show && character; // Discard the VA entry if the show or character aren't recorded
+		})
 		.map(va => {
 			const show = shows.find(show => show.id === va.show);
 			const character = characters.find(character => character.id === va.character);

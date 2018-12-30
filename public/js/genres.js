@@ -99,7 +99,6 @@ const app = new Vue({
 	},
 	methods: {
 		setShow (id, category) {
-			console.log('saa')
 			if (this.selections[id] === category) {
 				Vue.set(this.selections, id, null);
 			} else if (!this.selections[id] || confirm(`You have already selected this show for the ${this.selections[id]} category. You can only nominate a show for one category. Would you like to change it to ${category}?`)) {
@@ -129,10 +128,8 @@ window.onbeforeunload = function () {
 }
 
 fetch('/data/test.json').then(res => {
-	console.log(res);
 	return res.json();
 }).then(({characters, shows}) => {
-	console.log(characters, shows);
 	app.characters = characters.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
 	app.shows = shows.sort((a, b) => a.terms[0].replace(/^\s*|\s*$/g, '').localeCompare(b.terms[0].replace(/^\s*|\s*$/g, '')));
 });
