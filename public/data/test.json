@@ -986,7 +986,7 @@
 				"ReLIFE 完結編"
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx98635-FyHK34rRXrcN.jpg",
-			"format": "SPECIAL",
+			"format": "TV",
 			"short": true,
 			"original": false
 		},
@@ -3412,19 +3412,6 @@
 				" Should We See It from the Side or the Bottom?"
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx97908-CD9HTDWy8V21.jpg",
-			"format": "MOVIE",
-			"short": false,
-			"original": false
-		},
-		{
-			"id": 98469,
-			"mal": null,
-			"terms": [
-				"Koukyoushihen Eureka Seven Hi-Evolution 1",
-				null,
-				"交響詩篇エウレカセブン ハイエボリューション 1"
-			],
-			"img": "https://s3.anilist.co/media/anime/cover/small/nx98469-gIj5hYCWzcGw.png",
 			"format": "MOVIE",
 			"short": false,
 			"original": false
