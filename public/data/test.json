@@ -2220,7 +2220,7 @@
 			"img": "https://s3.anilist.co/media/anime/cover/small/nx101435-mPX5AWDgenk8.png",
 			"format": "TV_SHORT",
 			"short": true,
-			"original": false
+			"original": true
 		},
 		{
 			"id": 101743,
