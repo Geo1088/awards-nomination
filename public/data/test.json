@@ -5894,6 +5894,16 @@
 			"img": "https://s3.anilist.co/character/medium/n124546-pyHMuLUUBqFP.jpg"
 		},
 		{
+			"id": 132566,
+			"show_ids": [
+				99426
+			],
+			"terms": [
+				"Antarctica"
+			],
+			"img":"https://www.coolantarctica.com/gallery/scenic/Earth-sm.jpg"
+		},
+		{
 			"id": 124547,
 			"show_ids": [
 				99426
