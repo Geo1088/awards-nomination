@@ -4343,6 +4343,17 @@
 			"disableAnilist": true
 		},
 		{
+			"id": 132720,
+			"show_ids": [
+				100388
+			],
+			"terms": [
+				"Frederick Arthur",
+				"フレデリック・オーサー"
+			],
+			"img": "https://s3.anilist.co/character/large/n132720-gyeac9EfQK4D.jpg"
+		},
+		{
 			"id": 5449,
 			"show_ids": [
 				100661
