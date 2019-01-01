@@ -1,6 +1,32 @@
 {
 	"shows": [
 		{
+			"id": 101915,
+			"mal": null,
+			"terms": [
+				"Mecha-ude",
+				"Mechanical Arms",
+				"メカウデ"
+			],
+			"img": "https://s3.anilist.co/media/anime/cover/small/101915-SDoR6z9O3kp0.jpg",
+			"format": "TV",
+			"short": false,
+			"original": false
+		},
+		{
+			"id": 21684,
+			"mal": null,
+			"terms": [
+				"Mahouka Koukou no Rettousei Movie: Hoshi o Yobu Shoujo",
+				"The Irregular at Magic High School on The Movie: Hoshi o Yobu Shoujo",
+				"劇場版 魔法科高校の劣等生 星を呼ぶ少女"
+			],
+			"img": "https://s3.anilist.co/media/anime/cover/small/nx21684-MAT6GdCnfPdR.jpg",
+			"format": "TV",
+			"short": false,
+			"original": false
+		},
+		{
 			"id": 100661,
 			"mal": null,
 			"terms": [
@@ -4341,6 +4367,115 @@
 			],
 			"img": "https://cdn.myanimelist.net/images/characters/14/224047.jpg",
 			"disableAnilist": true
+		},
+		{
+			"id": 55741,
+			"show_ids": [
+				21684
+			],
+			"terms": [
+				"Miyuki Shiba",
+				"司波深雪",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/55741.jpg"
+		},
+		{
+			"id": 55743,
+			"show_ids": [
+				21684
+			],
+			"terms": [
+				"Tatsuya Shiba",
+				"司波達也",
+				"Mr. Silver"
+			],
+			"img": "https://s3.anilist.co/character/medium/n55743-vLHIDgGJJOqi.jpg"
+		},
+		{
+			"id": 72311,
+			"show_ids": [
+				21684
+			],
+			"terms": [
+				"Erika Chiba",
+				"千葉 エリカ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/72311.jpg"
+		},
+		{
+			"id": 88188,
+			"show_ids": [
+				21684
+			],
+			"terms": [
+				"Shizuku Kitayama",
+				"北山 雫",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/88188.jpg"
+		},
+		{
+			"id": 88191,
+			"show_ids": [
+				21684
+			],
+			"terms": [
+				"Honoka Mitsui",
+				"光井 ほのか",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/88191.jpg"
+		},
+		{
+			"id": 88195,
+			"show_ids": [
+				21684
+			],
+			"terms": [
+				"Leonhart Saijou",
+				"西城 レオンハルト",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/88195.jpg"
+		},
+		{
+			"id": 88197,
+			"show_ids": [
+				21684
+			],
+			"terms": [
+				"Mizuki Shibata",
+				"柴田 美月",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/88197.jpg"
+		},
+		{
+			"id": 88201,
+			"show_ids": [
+				21684
+			],
+			"terms": [
+				"Mikihiko Yoshida",
+				"吉田 幹比古",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/88201.jpg"
+		},
+		{
+			"id": 128377,
+			"show_ids": [
+				21684
+			],
+			"terms": [
+				"Angelina Kudou Shields",
+				"アンジェリーナ・クドウ・シールズ",
+				"Lina",
+				"Angie Sirius"
+			],
+			"img": "https://s3.anilist.co/character/medium/n128377-yQ667xAPpX65.jpg"
 		},
 		{
 			"id": 132720,
@@ -33209,6 +33344,69 @@
 		}
 	],
 	"vas": [
+		{
+			"id": 95869,
+			"name": "Saori Hayami",
+			"image": "https://s3.anilist.co/staff/medium/n95869-uYlfWC6GIPBJ.jpg",
+			"show": 21684,
+			"character": 55741
+		},
+		{
+			"id": 95513,
+			"name": "Yuuichi Nakamura",
+			"image": "https://s3.anilist.co/staff/medium/n95513-Gq0HaujGn43v.jpg",
+			"show": 21684,
+			"character": 55743
+		},
+		{
+			"id": 106784,
+			"name": "Yumi Uchiyama",
+			"image": "https://s3.anilist.co/staff/medium/11784.jpg",
+			"show": 21684,
+			"character": 72311
+		},
+		{
+			"id": 101997,
+			"name": "Yuiko Tatsumi",
+			"image": "https://s3.anilist.co/staff/medium/6997.jpg",
+			"show": 21684,
+			"character": 88188
+		},
+		{
+			"id": 116517,
+			"name": "Sora Amamiya",
+			"image": "https://s3.anilist.co/staff/medium/116517-n1FVYWhKuzzf.png",
+			"show": 21684,
+			"character": 88191
+		},
+		{
+			"id": 95494,
+			"name": "Takuma Terashima",
+			"image": "https://s3.anilist.co/staff/medium/n95494-zXWwxgAbfBFk.png",
+			"show": 21684,
+			"character": 88195
+		},
+		{
+			"id": 101560,
+			"name": "Satomi Satou",
+			"image": "https://s3.anilist.co/staff/medium/n101560-HRUACLJ6mt1S.png",
+			"show": 21684,
+			"character": 88197
+		},
+		{
+			"id": 103639,
+			"name": "Atsushi Tamaru",
+			"image": "https://s3.anilist.co/staff/medium/8639.jpg",
+			"show": 21684,
+			"character": 88201
+		},
+		{
+			"id": 102263,
+			"name": "Youko Hikasa",
+			"image": "https://s3.anilist.co/staff/medium/102263-GeVqoW4cVdT2.jpg",
+			"show": 21684,
+			"character": 128377
+		},
 		{
 			"id": 95769,
 			"name": "Youko Honna",
