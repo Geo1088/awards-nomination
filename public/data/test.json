@@ -4383,6 +4383,18 @@
 			"img": "https://cdn.myanimelist.net/images/characters/3/359857.jpg"
 		},
 		{
+			"id": 0,
+			"show_ids": [
+				103871
+			],
+			"terms": [
+				"Koutarou Tatsumi",
+				"巽幸太郎",
+				"Shades"
+			],
+			"img": "https://s3.anilist.co/character/large/127543-f773l2Fx4OLk.png"
+		},
+		{
 			"id": 132705,
 			"show_ids": [
 				100388
