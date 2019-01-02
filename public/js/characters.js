@@ -22,7 +22,7 @@ const app = new Vue({
 			return this.currentList
 				.filter(char => stringMatchesArray(this.filter, [
 					...char.terms,
-					...(this.selectedTab !== 'Overall Cast' && this.shows[char.show].terms || [])
+					...(this.selectedTab !== 'Overall Cast' ? char.show_ids.map(id => this.shows[id]).flat() : [])
 				]))
 				.filter(show => show.format !== 'MUSIC')
 				.filter(thing => {
