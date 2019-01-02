@@ -4411,6 +4411,7 @@
 		{
 			"id": 74653,
 			"show_ids": [
+				99539,
 				99540
 			],
 			"terms": [
@@ -4423,6 +4424,7 @@
 		{
 			"id": 77605,
 			"show_ids": [
+				99539,
 				99540
 			],
 			"terms": [
@@ -4452,6 +4454,7 @@
 		{
 			"id": 86683,
 			"show_ids": [
+				99539,
 				99540
 			],
 			"terms": [
@@ -10750,32 +10753,6 @@
 			"img": "https://s3.anilist.co/character/medium/74285-xQSCpiKBHV6h.png"
 		},
 		{
-			"id": 74653,
-			"show_ids": [
-				99539
-			],
-			"terms": [
-				"Diane",
-				"ディアンヌ",
-				"Serpent's Sin of Envy "
-			],
-			"img": "https://s3.anilist.co/character/medium/n74653-McN3hajjwMeQ.jpg"
-		},
-		{
-			"id": 77605,
-			"show_ids": [
-				99539
-			],
-			"terms": [
-				"Ban ",
-				"バン",
-				"Fox's Sin of Greed",
-				"Bandit Ban",
-				"Undead Ban"
-			],
-			"img": "https://s3.anilist.co/character/medium/77605-jeMkG83RrXHe.jpg"
-		},
-		{
 			"id": 83801,
 			"show_ids": [
 				99539
@@ -10839,22 +10816,6 @@
 				"Holy Maiden of the Fairy King's Forest"
 			],
 			"img": "https://s3.anilist.co/character/medium/86681-6kx3mfwNhraK.png"
-		},
-		{
-			"id": 86683,
-			"show_ids": [
-				99539
-			],
-			"terms": [
-				"Hawk ",
-				"ホーク",
-				"Hawky",
-				"Pork",
-				"Pig",
-				"Captain of the Knights of Leftovers Disposal",
-				"Power Level Obsessed"
-			],
-			"img": "https://s3.anilist.co/character/medium/n86683-ZXPoLZnKqNtx.png"
 		},
 		{
 			"id": 86685,
