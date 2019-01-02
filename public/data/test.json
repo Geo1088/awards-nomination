@@ -4383,6 +4383,19 @@
 			"img": "https://cdn.myanimelist.net/images/characters/3/359857.jpg"
 		},
 		{
+			"id": 132705,
+			"show_ids": [
+				100388
+			],
+			"terms": [
+				"Dino Golzine",
+				"ディノ・ゴルツィネ",
+				"Papa Dino",
+				"Dino F. Golzine"
+			],
+			"img": "https://s3.anilist.co/character/large/n132705-3TCIM3KymbXd.jpg"
+		},
+		{
 			"id": 72923,
 			"show_ids": [
 				99540
