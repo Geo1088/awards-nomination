@@ -4383,6 +4383,27 @@
 			"img": "https://cdn.myanimelist.net/images/characters/3/359857.jpg"
 		},
 		{
+			"id": 9090002,
+			"show_ids": [
+				132713
+			],
+			"terms": [
+				"Megumi Takagi",
+				"高城 めぐみ"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/11/342906.jpg"
+		},
+		{
+			"id": 132707,
+			"show_ids": [
+				98478
+			],
+			"terms": [
+				"Sakutarou Yanagihara (柳原 朔太郎)"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/5/341608.jpg"
+		},
+		{
 			"id": 132705,
 			"show_ids": [
 				100388
