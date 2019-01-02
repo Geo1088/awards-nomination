@@ -19,7 +19,11 @@ const app = new Vue({
 			return this.selectedTab === 'Overall Cast' ? this.shows : this.characters;
 		},
 		_filtered () {
-			return this.currentList.filter(show => stringMatchesArray(this.filter, show.terms))
+			return this.currentList
+				.filter(char => stringMatchesArray(this.filter, [
+					...char.terms,
+					...(this.selectedTab === 'Overall Cast' && this.shows[char.show].terms || [])
+				]))
 				.filter(show => show.format !== 'MUSIC')
 				.filter(thing => {
 					if (!this.showSelected) return true;
@@ -178,6 +182,6 @@ window.onbeforeunload = function () {
 fetch('/data/test.json').then(res => {
 	return res.json();
 }).then(({characters, shows}) => {
-	app.characters = shuffle(characters);
+	app.characters = shuffle(characters).filter(character => character.show_ids.some(id => shows.find(show => show.id === id)));
 	app.shows = shuffle(shows);
 });
