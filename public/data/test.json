@@ -1,6 +1,19 @@
 {
 	"shows": [
 		{
+			"id": 99540,
+			"mal": null,
+			"terms": [
+				"Nanatsu no Taizai Movie: Tenkuu no Torawarebito",
+				"The Seven Deadly Sins the Movie: Prisoners of the Sky",
+				"劇場版 七つの大罪 天空の囚われ人"
+			],
+			"img": "https://s3.anilist.co/media/anime/cover/small/nx99540-QnY48c1oifvY.jpg",
+			"format": "TV",
+			"short": false,
+			"original": false
+		},
+		{
 			"id": 101915,
 			"mal": null,
 			"terms": [
@@ -4356,6 +4369,235 @@
 		}
 	],
 	"characters": [
+		{
+			"id": 72923,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Elizabeth Liones",
+				"エリザベス・リオネス",
+				"Ellie",
+				"Elie"
+			],
+			"img": "https://s3.anilist.co/character/medium/72923-lx35keITbLt0.jpg"
+		},
+		{
+			"id": 74653,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Diane",
+				"ディアンヌ",
+				"Serpent's Sin of Envy "
+			],
+			"img": "https://s3.anilist.co/character/medium/n74653-McN3hajjwMeQ.jpg"
+		},
+		{
+			"id": 77605,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Ban ",
+				"バン",
+				"Fox's Sin of Greed",
+				"Bandit Ban",
+				"Undead Ban"
+			],
+			"img": "https://s3.anilist.co/character/medium/77605-jeMkG83RrXHe.jpg"
+		},
+		{
+			"id": 83801,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"King ",
+				"キング",
+				"Grizzly's Sin of Sloth",
+				"King of Fairies",
+				"Fairy King Harlequin",
+				"Fatty"
+			],
+			"img": "https://s3.anilist.co/character/medium/83801-X9xaEsHiVpQ6.jpg"
+		},
+		{
+			"id": 86683,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Hawk ",
+				"ホーク",
+				"Hawky",
+				"Pork",
+				"Pig",
+				"Captain of the Knights of Leftovers Disposal",
+				"Power Level Obsessed"
+			],
+			"img": "https://s3.anilist.co/character/medium/n86683-ZXPoLZnKqNtx.png"
+		},
+		{
+			"id": 88823,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Gowther ",
+				"ゴウセル",
+				"Goat's Sin of Lust"
+			],
+			"img": "https://s3.anilist.co/character/medium/88823-aF46fpZHMTdZ.png"
+		},
+		{
+			"id": 89180,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Merlin",
+				"マーリン",
+				"Boar's Sin of Gluttony",
+				"Brittania's Greatest Sorcerer"
+			],
+			"img": "https://s3.anilist.co/character/medium/89180-KEVDXa6i3DBC.png"
+		},
+		{
+			"id": 90202,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Escanor",
+				"エスカノール",
+				"Lion's Sin of Pride",
+				"Master of the Sun",
+				"Thin Moustache"
+			],
+			"img": "https://s3.anilist.co/character/medium/90202-m0czgNt9EBIK.png"
+		},
+		{
+			"id": 131247,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Dahaka",
+				"ダハーカ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
+		{
+			"id": 131248,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Berlion",
+				"ベルリオン",
+				"Bellion"
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
+		{
+			"id": 131249,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Aterra",
+				"アトラ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
+		{
+			"id": 131250,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Banes",
+				"バネス",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
+		{
+			"id": 131251,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Solada",
+				"ソラーダ",
+				"Sorada"
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
+		{
+			"id": 131252,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Gala",
+				"ガラ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
+		{
+			"id": 131253,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Erlatte",
+				"エルラッテ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
+		{
+			"id": 131254,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Derocchio",
+				"デロッキオ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
+		{
+			"id": 131255,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Zoria",
+				"ゾリア",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
+		{
+			"id": 131256,
+			"show_ids": [
+				99540
+			],
+			"terms": [
+				"Pump",
+				"パンプ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/default.jpg"
+		},
 		{
 			"id": 9000001,
 			"show_ids": [
@@ -10445,7 +10687,8 @@
 		{
 			"id": 72921,
 			"show_ids": [
-				99539
+				99539,
+				99540
 			],
 			"terms": [
 				"Meliodas",
@@ -33345,6 +33588,139 @@
 	],
 	"vas": [
 		{
+			"id": 95672,
+			"name": "Yuuki Kaji",
+			"image": "https://s3.anilist.co/staff/medium/95672-bTiHcyUR69sd.png",
+			"show": 99540,
+			"character": 72921
+		},
+		{
+			"id": 116517,
+			"name": "Sora Amamiya",
+			"image": "https://s3.anilist.co/staff/medium/116517-n1FVYWhKuzzf.png",
+			"show": 99540,
+			"character": 72923
+		},
+		{
+			"id": 101686,
+			"name": "Aoi Yuuki",
+			"image": "https://s3.anilist.co/staff/medium/101686-sJfpvFltMBlK.jpg",
+			"show": 99540,
+			"character": 74653
+		},
+		{
+			"id": 95735,
+			"name": "Tatsuhisa Suzuki",
+			"image": "https://s3.anilist.co/staff/medium/n95735-XqAfuOQ0Djq0.png",
+			"show": 99540,
+			"character": 77605
+		},
+		{
+			"id": 95086,
+			"name": "Jun Fukuyama",
+			"image": "https://s3.anilist.co/staff/medium/95086-oRIkgLQW5ZZa.jpg",
+			"show": 99540,
+			"character": 83801
+		},
+		{
+			"id": 106641,
+			"name": "Misaki Kuno",
+			"image": "https://s3.anilist.co/staff/medium/n106641-ykho3ZlHWYB2.png",
+			"show": 99540,
+			"character": 86683
+		},
+		{
+			"id": 119202,
+			"name": "Yuuhei Takagi",
+			"image": "https://s3.anilist.co/staff/medium/24202-3K9qJvADmZqO.jpg",
+			"show": 99540,
+			"character": 88823
+		},
+		{
+			"id": 95090,
+			"name": "Maaya Sakamoto",
+			"image": "https://s3.anilist.co/staff/medium/95090-UtMGSjAqhuKf.jpg",
+			"show": 99540,
+			"character": 89180
+		},
+		{
+			"id": 95002,
+			"name": "Tomokazu Sugita",
+			"image": "https://s3.anilist.co/staff/medium/n95002-8okzQNeBILg9.jpg",
+			"show": 99540,
+			"character": 90202
+		},
+		{
+			"id": 109163,
+			"name": "Tooru Sakurai",
+			"image": "https://s3.anilist.co/staff/medium/14163.jpg",
+			"show": 99540,
+			"character": 131247
+		},
+		{
+			"id": 95006,
+			"name": "Toshiyuki Morikawa",
+			"image": "https://s3.anilist.co/staff/medium/n95006-w57alx4juaZH.jpg",
+			"show": 99540,
+			"character": 131248
+		},
+		{
+			"id": 96122,
+			"name": "Takaya Kuroda",
+			"image": "https://s3.anilist.co/staff/medium/1122.jpg",
+			"show": 99540,
+			"character": 131249
+		},
+		{
+			"id": 101504,
+			"name": "Reiko Suzuki",
+			"image": "https://s3.anilist.co/staff/medium/6504.jpg",
+			"show": 99540,
+			"character": 131250
+		},
+		{
+			"id": 95556,
+			"name": "Tsubasa Yonaga",
+			"image": "https://s3.anilist.co/staff/medium/n95556-Tgolp8AzO49n.png",
+			"show": 99540,
+			"character": 131251
+		},
+		{
+			"id": 102263,
+			"name": "Youko Hikasa",
+			"image": "https://s3.anilist.co/staff/medium/102263-GeVqoW4cVdT2.jpg",
+			"show": 99540,
+			"character": 131252
+		},
+		{
+			"id": 95890,
+			"name": "Haruka Tomatsu",
+			"image": "https://s3.anilist.co/staff/medium/890.jpg",
+			"show": 99540,
+			"character": 131253
+		},
+		{
+			"id": 95397,
+			"name": "Masuo Amada",
+			"image": "https://s3.anilist.co/staff/medium/397.jpg",
+			"show": 99540,
+			"character": 131254
+		},
+		{
+			"id": 95146,
+			"name": "Akio Ohtsuka",
+			"image": "https://s3.anilist.co/staff/medium/n95146-9dR9bTGWQCYv.png",
+			"show": 99540,
+			"character": 131255
+		},
+		{
+			"id": 129832,
+			"name": "Silkroad ",
+			"image": "https://s3.anilist.co/staff/medium/n129832-Q9XtUNW2WMrB.jpg",
+			"show": 99540,
+			"character": 131256
+		},
+		{
 			"id": 95869,
 			"name": "Saori Hayami",
 			"image": "https://s3.anilist.co/staff/medium/n95869-uYlfWC6GIPBJ.jpg",
@@ -49740,6 +50116,45 @@
 		}
 	],
 	"opedOnly": [
+		{
+			"id": 9100001,
+			"mal": 34034,
+			"terms": [
+				"Pokemon Sun and Moon",
+				"Pokémon Sun and Moon"
+			],
+			"img": "https://cdn.myanimelist.net/images/anime/11/84673.jpg",
+			"format": "TV",
+			"short": false,
+			"original": false
+		},
+		{
+			"id": 101336,
+			"mal": null,
+			"terms": [
+				"Karakuri Circus",
+				null,
+				"からくりサーカス",
+				"Le Cirque de Karakuri"
+			],
+			"img": "https://s3.anilist.co/media/anime/cover/small/nx101336-RhdykHwHu1dh.jpg",
+			"format": "TV",
+			"short": false,
+			"original": false
+		},
+		{
+			"id": 101043,
+			"mal": null,
+			"terms": [
+				"Aikatsu Friends!",
+				"Aikatsu Friends!",
+				"アイカツフレンズ!"
+			],
+			"img": "https://s3.anilist.co/media/anime/cover/small/101043-aaSFwmstF6Ea.jpg",
+			"format": "TV",
+			"short": false,
+			"original": false
+		},
 		{
 			"id": 100182,
 			"mal": null,

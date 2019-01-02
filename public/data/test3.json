@@ -1,1 +1,980 @@
-{"shows":[{"id":101915,"mal":null,"terms":["Mecha-ude","Mechanical Arms","メカウデ"],"img":"https://s3.anilist.co/media/anime/cover/small/101915-SDoR6z9O3kp0.jpg","format":"TV","short":false,"original":false},{"id":21684,"mal":null,"terms":["Mahouka Koukou no Rettousei Movie: Hoshi o Yobu Shoujo","The Irregular at Magic High School on The Movie: Hoshi o Yobu Shoujo","劇場版 魔法科高校の劣等生 星を呼ぶ少女"],"img":"https://s3.anilist.co/media/anime/cover/small/nx21684-MAT6GdCnfPdR.jpg","format":"TV","short":false,"original":false}],"characters":[{"id":55741,"show_ids":[21684],"terms":["Miyuki Shiba","司波深雪",""],"img":"https://s3.anilist.co/character/medium/55741.jpg"},{"id":55743,"show_ids":[21684],"terms":["Tatsuya Shiba","司波達也","Mr. Silver"],"img":"https://s3.anilist.co/character/medium/n55743-vLHIDgGJJOqi.jpg"},{"id":72311,"show_ids":[21684],"terms":["Erika Chiba","千葉 エリカ",""],"img":"https://s3.anilist.co/character/medium/72311.jpg"},{"id":88188,"show_ids":[21684],"terms":["Shizuku Kitayama","北山 雫",""],"img":"https://s3.anilist.co/character/medium/88188.jpg"},{"id":88191,"show_ids":[21684],"terms":["Honoka Mitsui","光井 ほのか",""],"img":"https://s3.anilist.co/character/medium/88191.jpg"},{"id":88195,"show_ids":[21684],"terms":["Leonhart Saijou","西城 レオンハルト",""],"img":"https://s3.anilist.co/character/medium/88195.jpg"},{"id":88197,"show_ids":[21684],"terms":["Mizuki Shibata","柴田 美月",""],"img":"https://s3.anilist.co/character/medium/88197.jpg"},{"id":88201,"show_ids":[21684],"terms":["Mikihiko Yoshida","吉田 幹比古",""],"img":"https://s3.anilist.co/character/medium/88201.jpg"},{"id":128377,"show_ids":[21684],"terms":["Angelina Kudou Shields","アンジェリーナ・クドウ・シールズ","Lina","Angie Sirius"],"img":"https://s3.anilist.co/character/medium/n128377-yQ667xAPpX65.jpg"}],"vas":[{"id":95869,"name":"Saori Hayami","image":"https://s3.anilist.co/staff/medium/n95869-uYlfWC6GIPBJ.jpg","show":21684,"character":55741},{"id":95513,"name":"Yuuichi Nakamura","image":"https://s3.anilist.co/staff/medium/n95513-Gq0HaujGn43v.jpg","show":21684,"character":55743},{"id":106784,"name":"Yumi Uchiyama","image":"https://s3.anilist.co/staff/medium/11784.jpg","show":21684,"character":72311},{"id":101997,"name":"Yuiko Tatsumi","image":"https://s3.anilist.co/staff/medium/6997.jpg","show":21684,"character":88188},{"id":116517,"name":"Sora Amamiya","image":"https://s3.anilist.co/staff/medium/116517-n1FVYWhKuzzf.png","show":21684,"character":88191},{"id":95494,"name":"Takuma Terashima","image":"https://s3.anilist.co/staff/medium/n95494-zXWwxgAbfBFk.png","show":21684,"character":88195},{"id":101560,"name":"Satomi Satou","image":"https://s3.anilist.co/staff/medium/n101560-HRUACLJ6mt1S.png","show":21684,"character":88197},{"id":103639,"name":"Atsushi Tamaru","image":"https://s3.anilist.co/staff/medium/8639.jpg","show":21684,"character":88201},{"id":102263,"name":"Youko Hikasa","image":"https://s3.anilist.co/staff/medium/102263-GeVqoW4cVdT2.jpg","show":21684,"character":128377}],"opedOnly":[]}
+{
+	"shows": [
+		
+	],
+	"characters": [
+		
+		{
+			"id": 20174,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Kato Narumi",
+				"鳴海加藤",
+				"Minghai"
+			],
+			"img": "https://s3.anilist.co/character/medium/n20174-lqVoCG8sQ75v.jpg"
+		},
+		{
+			"id": 24280,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Masaru Saiga",
+				"才賀勝",
+				"さいが まさる"
+			],
+			"img": "https://s3.anilist.co/character/medium/n24280-0tHEq094zOrB.png"
+		},
+		{
+			"id": 30209,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Shirogane",
+				"しろがね",
+				"Éléonore"
+			],
+			"img": "https://s3.anilist.co/character/medium/n30209-rKVz6pLJOnSq.png"
+		},
+		{
+			"id": 30210,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Guy Christopher Rech",
+				"ギイ・クリストフ・レッシュ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/30210.jpg"
+		},
+		{
+			"id": 128451,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Arlequino",
+				"アルレッキーノ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128451-vu2Vr0gk4EsT.jpg"
+		},
+		{
+			"id": 128452,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Eiryou Ashihana",
+				"阿紫花英良",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128452-43hFKWgmvdU1.jpg"
+		},
+		{
+			"id": 128453,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Columbine",
+				"コロンビーヌ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128453-PKaOKpfRiecL.jpg"
+		},
+		{
+			"id": 128454,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Hiro Nakamachi",
+				"仲町浩男",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128454-E0FdcrsmH1Md.jpg"
+		},
+		{
+			"id": 128455,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Noriyuki Nakamachi",
+				"仲町紀之",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128455-20MybtZiFUC8.jpg"
+		},
+		{
+			"id": 128456,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Shouji Saiga",
+				"才賀 正二",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128456-ucawuGUVtH4v.jpg"
+		},
+		{
+			"id": 128457,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Vilma Thorne",
+				"ヴィルマ・ソーン",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128457-32oVUzyX50Le.jpg"
+		},
+		{
+			"id": 128458,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Pantalon",
+				"パンタローネ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128458-VLBNuNRbIVoY.jpg"
+		},
+		{
+			"id": 128459,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Dottore",
+				"ドットーレ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128459-7jyRF2TBvzyo.jpg"
+		},
+		{
+			"id": 128460,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Shinobu Nakamachi",
+				"仲町信夫",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128460-rt9qJAiSpTkP.jpg"
+		},
+		{
+			"id": 128461,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Taranda Lieselotte Tachibana",
+				"タランダ・リーゼロッテ・橘",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128461-Ermep1ogy4G5.jpg"
+		},
+		{
+			"id": 128462,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Zenji Saiga",
+				"才賀善治",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128462-31EDGfVjbBfQ.jpg"
+		},
+		{
+			"id": 128463,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Lucille Verneuil",
+				"ルシール・ベルヌイユ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n128463-GMwykm0Lyfmw.jpg"
+		},
+		{
+			"id": 132153,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Takami",
+				"高見",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132153-AvecjJWkOnrn.png"
+		},
+		{
+			"id": 132154,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Orie Ueda",
+				"上田織江",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132154-O47k05dyJzCd.png"
+		},
+		{
+			"id": 132155,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Jian-Feng Liang",
+				"梁剣峰",
+				"リャン・チャンフォン"
+			],
+			"img": "https://s3.anilist.co/character/medium/n132155-y0rNdjsgft3y.png"
+		},
+		{
+			"id": 132156,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Ozaki",
+				"尾崎",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132156-JjUo34YMXOEU.png"
+		},
+		{
+			"id": 132157,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Yin Bai",
+				"白銀",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132157-MCSN82yHNlUA.png"
+		},
+		{
+			"id": 132158,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"George LaRoche",
+				"ジョージ・ラローシュ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132158-ne9Tclt9nJ9l.png"
+		},
+		{
+			"id": 132159,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Masamura",
+				"増村",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132159-U8a8hi4ocIBb.png"
+		},
+		{
+			"id": 132160,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Nakata",
+				"中田",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132160-BNtBpKiByByE.png"
+		},
+		{
+			"id": 132161,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Steve Rockenfield",
+				"スティーブ・ロッケンフィールド",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132161-onNE9HfQ5Kqo.png"
+		},
+		{
+			"id": 132162,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Jin Bai",
+				"白金",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132162-f6IIjE4imq4i.png"
+		},
+		{
+			"id": 132163,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Fatima",
+				"ファティマ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132163-x05Yc1L1GkIH.png"
+		},
+		{
+			"id": 132164,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Hazama",
+				"羽佐間",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132164-rZPUXg2j6OfE.png"
+		},
+		{
+			"id": 132165,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Kanou",
+				"加納",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132165-rGaBA3mzKYSz.png"
+		},
+		{
+			"id": 132166,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Ming-Xia Liang",
+				"梁明霞",
+				"リャン・ミンシア"
+			],
+			"img": "https://s3.anilist.co/character/medium/n132166-8NAsTfw5eKVZ.png"
+		},
+		{
+			"id": 132167,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Yamanaka",
+				"山仲",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132167-uRnJh05KhWw1.png"
+		},
+		{
+			"id": 132168,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Francine",
+				"フランシーヌ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132168-efN0xnv09Fpy.jpg"
+		},
+		{
+			"id": 132169,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Atsushi Kajiyama",
+				"梶山あつし",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132169-8IveGWPvBthZ.png"
+		},
+		{
+			"id": 132170,
+			"show_ids": [
+				101336
+			],
+			"terms": [
+				"Sano",
+				"佐野",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n132170-SwUzbZ10Jv6X.png"
+		},
+		{
+			"id": 125938,
+			"show_ids": [
+				101043
+			],
+			"terms": [
+				"Aine Yuuki",
+				"友希あいね",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/125938-9exV1EJ2USm8.png"
+		},
+		{
+			"id": 125940,
+			"show_ids": [
+				101043
+			],
+			"terms": [
+				"Mio Minato",
+				"湊 みお",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/125940-hpeJmK8CVSwK.png"
+		},
+		{
+			"id": 125941,
+			"show_ids": [
+				101043
+			],
+			"terms": [
+				"Maika Chouno",
+				"蝶乃 舞花",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/125941-pZwmwSCNVzbL.png"
+		},
+		{
+			"id": 125942,
+			"show_ids": [
+				101043
+			],
+			"terms": [
+				"Ema Hinata",
+				"日向 エマ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/125942-XjCQsyV1wQlF.png"
+		},
+		{
+			"id": 125954,
+			"show_ids": [
+				101043
+			],
+			"terms": [
+				"Mirai Asuka",
+				"明日香ミライ",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/125954-tKgjW4ZPCvQg.png"
+		},
+		{
+			"id": 125955,
+			"show_ids": [
+				101043
+			],
+			"terms": [
+				"Karen Kamishiro",
+				"神城カレン",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/125955-Mj7fTG1nSHEO.png"
+		},
+		{
+			"id": 127721,
+			"show_ids": [
+				101043
+			],
+			"terms": [
+				"Kaguya Shirayuri",
+				"白百合かぐや",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n127721-t9JEskokJHI5.jpg"
+		},
+		{
+			"id": 127722,
+			"show_ids": [
+				101043
+			],
+			"terms": [
+				"Sakuya Shirayuri",
+				"白百合さくや",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n127722-o01HWcTGcEuO.jpg"
+		},
+		{
+			"id": 131023,
+			"show_ids": [
+				101043
+			],
+			"terms": [
+				"Chiharu Hachiya",
+				"蜂谷千春",
+				""
+			],
+			"img": "https://s3.anilist.co/character/medium/n131023-Pij1EVSHnV2M.png"
+		}
+	],
+	"vas": [
+		{
+			"id": 95672,
+			"name": "Yuuki Kaji",
+			"image": "https://s3.anilist.co/staff/medium/95672-bTiHcyUR69sd.png",
+			"show": 99540,
+			"character": 72921
+		},
+		{
+			"id": 116517,
+			"name": "Sora Amamiya",
+			"image": "https://s3.anilist.co/staff/medium/116517-n1FVYWhKuzzf.png",
+			"show": 99540,
+			"character": 72923
+		},
+		{
+			"id": 101686,
+			"name": "Aoi Yuuki",
+			"image": "https://s3.anilist.co/staff/medium/101686-sJfpvFltMBlK.jpg",
+			"show": 99540,
+			"character": 74653
+		},
+		{
+			"id": 95735,
+			"name": "Tatsuhisa Suzuki",
+			"image": "https://s3.anilist.co/staff/medium/n95735-XqAfuOQ0Djq0.png",
+			"show": 99540,
+			"character": 77605
+		},
+		{
+			"id": 95086,
+			"name": "Jun Fukuyama",
+			"image": "https://s3.anilist.co/staff/medium/95086-oRIkgLQW5ZZa.jpg",
+			"show": 99540,
+			"character": 83801
+		},
+		{
+			"id": 106641,
+			"name": "Misaki Kuno",
+			"image": "https://s3.anilist.co/staff/medium/n106641-ykho3ZlHWYB2.png",
+			"show": 99540,
+			"character": 86683
+		},
+		{
+			"id": 119202,
+			"name": "Yuuhei Takagi",
+			"image": "https://s3.anilist.co/staff/medium/24202-3K9qJvADmZqO.jpg",
+			"show": 99540,
+			"character": 88823
+		},
+		{
+			"id": 95090,
+			"name": "Maaya Sakamoto",
+			"image": "https://s3.anilist.co/staff/medium/95090-UtMGSjAqhuKf.jpg",
+			"show": 99540,
+			"character": 89180
+		},
+		{
+			"id": 95002,
+			"name": "Tomokazu Sugita",
+			"image": "https://s3.anilist.co/staff/medium/n95002-8okzQNeBILg9.jpg",
+			"show": 99540,
+			"character": 90202
+		},
+		{
+			"id": 109163,
+			"name": "Tooru Sakurai",
+			"image": "https://s3.anilist.co/staff/medium/14163.jpg",
+			"show": 99540,
+			"character": 131247
+		},
+		{
+			"id": 95006,
+			"name": "Toshiyuki Morikawa",
+			"image": "https://s3.anilist.co/staff/medium/n95006-w57alx4juaZH.jpg",
+			"show": 99540,
+			"character": 131248
+		},
+		{
+			"id": 96122,
+			"name": "Takaya Kuroda",
+			"image": "https://s3.anilist.co/staff/medium/1122.jpg",
+			"show": 99540,
+			"character": 131249
+		},
+		{
+			"id": 101504,
+			"name": "Reiko Suzuki",
+			"image": "https://s3.anilist.co/staff/medium/6504.jpg",
+			"show": 99540,
+			"character": 131250
+		},
+		{
+			"id": 95556,
+			"name": "Tsubasa Yonaga",
+			"image": "https://s3.anilist.co/staff/medium/n95556-Tgolp8AzO49n.png",
+			"show": 99540,
+			"character": 131251
+		},
+		{
+			"id": 102263,
+			"name": "Youko Hikasa",
+			"image": "https://s3.anilist.co/staff/medium/102263-GeVqoW4cVdT2.jpg",
+			"show": 99540,
+			"character": 131252
+		},
+		{
+			"id": 95890,
+			"name": "Haruka Tomatsu",
+			"image": "https://s3.anilist.co/staff/medium/890.jpg",
+			"show": 99540,
+			"character": 131253
+		},
+		{
+			"id": 95397,
+			"name": "Masuo Amada",
+			"image": "https://s3.anilist.co/staff/medium/397.jpg",
+			"show": 99540,
+			"character": 131254
+		},
+		{
+			"id": 95146,
+			"name": "Akio Ohtsuka",
+			"image": "https://s3.anilist.co/staff/medium/n95146-9dR9bTGWQCYv.png",
+			"show": 99540,
+			"character": 131255
+		},
+		{
+			"id": 129832,
+			"name": "Silkroad ",
+			"image": "https://s3.anilist.co/staff/medium/n129832-Q9XtUNW2WMrB.jpg",
+			"show": 99540,
+			"character": 131256
+		},
+		{
+			"id": 95113,
+			"name": "Rikiya Koyama",
+			"image": "https://s3.anilist.co/staff/medium/n95113-UQ1qDBxbRcWt.jpg",
+			"show": 101336,
+			"character": 20174
+		},
+		{
+			"id": 127647,
+			"name": "Chihiro Ueda",
+			"image": "https://s3.anilist.co/staff/medium/n127647-qXFET2F3Y7wo.jpg",
+			"show": 101336,
+			"character": 24280
+		},
+		{
+			"id": 95014,
+			"name": "Megumi Hayashibara",
+			"image": "https://s3.anilist.co/staff/medium/n95014-VqxNuufY94V3.png",
+			"show": 101336,
+			"character": 30209
+		},
+		{
+			"id": 95286,
+			"name": "Nozomu Sasaki",
+			"image": "https://s3.anilist.co/staff/medium/286.jpg",
+			"show": 101336,
+			"character": 30210
+		},
+		{
+			"id": 95086,
+			"name": "Jun Fukuyama",
+			"image": "https://s3.anilist.co/staff/medium/95086-oRIkgLQW5ZZa.jpg",
+			"show": 101336,
+			"character": 128451
+		},
+		{
+			"id": 95079,
+			"name": "Takahiro Sakurai",
+			"image": "https://s3.anilist.co/staff/medium/95079-DBODxXnQMLiP.jpg",
+			"show": 101336,
+			"character": 128452
+		},
+		{
+			"id": 101686,
+			"name": "Aoi Yuuki",
+			"image": "https://s3.anilist.co/staff/medium/101686-sJfpvFltMBlK.jpg",
+			"show": 101336,
+			"character": 128453
+		},
+		{
+			"id": 115156,
+			"name": "Kaito Ishikawa",
+			"image": "https://s3.anilist.co/staff/medium/115156-A03oJosfg2Y0.jpg",
+			"show": 101336,
+			"character": 128454
+		},
+		{
+			"id": 126856,
+			"name": "Ryota Iwasaki",
+			"image": "https://s3.anilist.co/staff/medium/126856-CJv0CB18g43Z.jpg",
+			"show": 101336,
+			"character": 128455
+		},
+		{
+			"id": 96414,
+			"name": "Masahiko Tanaka",
+			"image": "https://s3.anilist.co/staff/medium/1414.jpg",
+			"show": 101336,
+			"character": 128456
+		},
+		{
+			"id": 95158,
+			"name": "Marina Inoue",
+			"image": "https://s3.anilist.co/staff/medium/95158-nHZAdr9HNof4.jpg",
+			"show": 101336,
+			"character": 128457
+		},
+		{
+			"id": 95091,
+			"name": "Jouji Nakata",
+			"image": "https://s3.anilist.co/staff/medium/n95091-IQE2baSOZ8NY.jpg",
+			"show": 101336,
+			"character": 128458
+		},
+		{
+			"id": 95836,
+			"name": "Ryuuzaburou Ootomo",
+			"image": "https://s3.anilist.co/staff/medium/836.jpg",
+			"show": 101336,
+			"character": 128459
+		},
+		{
+			"id": 96481,
+			"name": "Hisao Egawa",
+			"image": "https://s3.anilist.co/staff/medium/1481.jpg",
+			"show": 101336,
+			"character": 128460
+		},
+		{
+			"id": 106661,
+			"name": "Tomoyo Kurosawa",
+			"image": "https://s3.anilist.co/staff/medium/106661-Jq0CnH8Dq70u.jpg",
+			"show": 101336,
+			"character": 128461
+		},
+		{
+			"id": 95146,
+			"name": "Akio Ohtsuka",
+			"image": "https://s3.anilist.co/staff/medium/n95146-9dR9bTGWQCYv.png",
+			"show": 101336,
+			"character": 128462
+		},
+		{
+			"id": 95082,
+			"name": "Romi Park",
+			"image": "https://s3.anilist.co/staff/medium/n95082-nGwB1pPlLDs0.jpg",
+			"show": 101336,
+			"character": 128463
+		},
+		{
+			"id": 130641,
+			"name": "Saki Endou",
+			"image": "https://s3.anilist.co/staff/medium/n130641-CHY2qNyWZuBV.jpg",
+			"show": 101336,
+			"character": 132153
+		},
+		{
+			"id": 119154,
+			"name": "Yuuki Takada",
+			"image": "https://s3.anilist.co/staff/medium/24154-zlrb4bgYOFyN.jpg",
+			"show": 101336,
+			"character": 132154
+		},
+		{
+			"id": 100317,
+			"name": "Katsuhisa Houki",
+			"image": "https://s3.anilist.co/staff/medium/5317.jpg",
+			"show": 101336,
+			"character": 132155
+		},
+		{
+			"id": 131173,
+			"name": "Volcano Outa",
+			"image": "https://s3.anilist.co/staff/medium/n131173-rYdOkQIW8lSn.jpg",
+			"show": 101336,
+			"character": 132156
+		},
+		{
+			"id": 95001,
+			"name": "Tomokazu Seki",
+			"image": "https://s3.anilist.co/staff/medium/95001-6vsQ78ivsvpm.jpg",
+			"show": 101336,
+			"character": 132157
+		},
+		{
+			"id": 95371,
+			"name": "Kenji Hamada",
+			"image": "https://s3.anilist.co/staff/medium/n95371-g4WEe2JiTIm5.png",
+			"show": 101336,
+			"character": 132158
+		},
+		{
+			"id": 104945,
+			"name": "Keiji Hirai",
+			"image": "https://s3.anilist.co/staff/medium/9945.jpg",
+			"show": 101336,
+			"character": 132159
+		},
+		{
+			"id": 106407,
+			"name": "Ryuuichi Kijima",
+			"image": "https://s3.anilist.co/staff/medium/11407.jpg",
+			"show": 101336,
+			"character": 132160
+		},
+		{
+			"id": 105625,
+			"name": "Hiromichi Kogami",
+			"image": "https://s3.anilist.co/staff/medium/10625.jpg",
+			"show": 101336,
+			"character": 132161
+		},
+		{
+			"id": 95673,
+			"name": "Toshio Furukawa",
+			"image": "https://s3.anilist.co/staff/medium/n95673-xq1hsFrU51t0.png",
+			"show": 101336,
+			"character": 132162
+		},
+		{
+			"id": 106622,
+			"name": "Ayane Sakura",
+			"image": "https://s3.anilist.co/staff/medium/11622.jpg",
+			"show": 101336,
+			"character": 132163
+		},
+		{
+			"id": 96279,
+			"name": "Keikou Sakai",
+			"image": "https://s3.anilist.co/staff/medium/1279.jpg",
+			"show": 101336,
+			"character": 132164
+		},
+		{
+			"id": 105833,
+			"name": "Yuko Tachibana",
+			"image": "https://s3.anilist.co/staff/medium/10833.jpg",
+			"show": 101336,
+			"character": 132165
+		},
+		{
+			"id": 96592,
+			"name": "Yoshino Nanjo",
+			"image": "https://s3.anilist.co/staff/medium/1592.jpg",
+			"show": 101336,
+			"character": 132166
+		},
+		{
+			"id": 132171,
+			"name": "Uoken",
+			"image": "https://s3.anilist.co/staff/medium/n132171-EmVncjFQE45i.png",
+			"show": 101336,
+			"character": 132167
+		},
+		{
+			"id": 95014,
+			"name": "Megumi Hayashibara",
+			"image": "https://s3.anilist.co/staff/medium/n95014-VqxNuufY94V3.png",
+			"show": 101336,
+			"character": 132168
+		},
+		{
+			"id": 132172,
+			"name": "Takahiro Miwa",
+			"image": "https://s3.anilist.co/staff/medium/n132172-rKR40Whk2cDe.png",
+			"show": 101336,
+			"character": 132169
+		},
+		{
+			"id": 132173,
+			"name": "Koichi Gomi",
+			"image": "https://s3.anilist.co/staff/medium/n132173-oVHxpA6cLg4Y.png",
+			"show": 101336,
+			"character": 132170
+		},
+		{
+			"id": 125939,
+			"name": "Akane Matsunaga",
+			"image": "https://s3.anilist.co/staff/medium/125939-pb2dLTlzpEcP.jpg",
+			"show": 101043,
+			"character": 125938
+		},
+		{
+			"id": 112091,
+			"name": "Ibuki Kido",
+			"image": "https://s3.anilist.co/staff/medium/112091-EAhQJAhfeSsG.jpg",
+			"show": 101043,
+			"character": 125940
+		},
+		{
+			"id": 111197,
+			"name": "Karen Miyama",
+			"image": "https://s3.anilist.co/staff/medium/16197.jpg",
+			"show": 101043,
+			"character": 125941
+		},
+		{
+			"id": 125943,
+			"name": "Yui Ninomiya",
+			"image": "https://s3.anilist.co/staff/medium/125943-hgFAKjRcWKij.jpg",
+			"show": 101043,
+			"character": 125942
+		},
+		{
+			"id": 110903,
+			"name": "Ayaka Ohashi",
+			"image": "https://s3.anilist.co/staff/medium/15903.jpg",
+			"show": 101043,
+			"character": 125954
+		},
+		{
+			"id": 112297,
+			"name": "Azusa Tadokoro",
+			"image": "https://s3.anilist.co/staff/medium/17297.jpg",
+			"show": 101043,
+			"character": 125955
+		},
+		{
+			"id": 118399,
+			"name": "Yuuki Kuwahara",
+			"image": "https://s3.anilist.co/staff/medium/118399-myx5RZcoFlgw.jpg",
+			"show": 101043,
+			"character": 127721
+		},
+		{
+			"id": 127723,
+			"name": "Emiri Suyama",
+			"image": "https://s3.anilist.co/staff/medium/n127723-Hv5bBNjxkgJ0.jpg",
+			"show": 101043,
+			"character": 127722
+		},
+		{
+			"id": 95241,
+			"name": "Rina Satou",
+			"image": "https://s3.anilist.co/staff/medium/241.jpg",
+			"show": 101043,
+			"character": 131023
+		}
+	],
+	"opedOnly": []
+}
