@@ -4370,6 +4370,19 @@
 	],
 	"characters": [
 		{
+			"id": 9020001,
+			"show_ids": [
+				101045
+			],
+			"terms": [
+				"Uchika Hanesaki",
+				"羽咲 有千夏",
+				"Ayano's Mother",
+				"Ayano's Mom"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/3/359857.jpg"
+		},
+		{
 			"id": 72923,
 			"show_ids": [
 				99540
