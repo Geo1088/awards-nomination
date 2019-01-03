@@ -4,9 +4,10 @@ require "redd/middleware"
 require "rethinkdb"
 
 include RethinkDB::Shortcuts
-c = r.connect db: 'aanoms_responses'
+c = r.connect db: "aanoms_responses"
 
 CONFIG = YAML.load_file "config.yaml"
+HOSTS = CONFIG[:hosts]
 
 use Rack::Session::Cookie, secret: CONFIG[:cookie_secret]
 use Redd::Middleware, CONFIG.merge({
@@ -34,15 +35,11 @@ helpers do
     Rack::Utils.escape_html(text)
   end
 
-  def authenticate!(sub: nil, host: false)
+  def authenticate!(host: false)
     redirect to "/" unless @r
     redirect to "/" if @r.me.created > CONFIG[:epoch]
     if host
       redirect to "/" unless HOSTS.include? @r.me.name
-    end
-    if sub
-      # TODO
-      redirect to "/" unless true
     end
   end
 end
@@ -94,4 +91,13 @@ post "/response/:form" do |form|
     r.table(form).insert(data).run(c)
   end
   "Success"
+end
+
+get '/stats' do
+  authenticate! host: true
+  erb :stats, locals: {
+    data: %w[genres characters production main].map {
+      |category| [category, r.table(category).run(c).to_a]
+    }.to_h
+  }
 end

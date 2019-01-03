@@ -2,3 +2,4 @@ config.yaml
 .sass-cache
 **/.DS_Store
 rethinkdb_data
+fetch_anilist/edited_shows.json
