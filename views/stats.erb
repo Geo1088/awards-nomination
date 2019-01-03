@@ -10,17 +10,14 @@ fetch('/data/test.json').then(res => {
 
 <div class="section"><div class="container"><div class="content">
 
-<h1 class="title">The Game So Far</h1>
-
-<p>${Object.keys(data)
+<h1>The Game So Far (${Object.keys(data)
 	.map(key => data[key])
 	.reduce((a, b) => a.concat(b))
 	.filter((obj, i, arr) =>
 		i === arr.findIndex(s => s.id === obj.id)
-	).length} responses
-</p>
+	).length} responses)</h1>
 
-<h1>Genres (<%= data["genres"].size %> responses)</h1>
+<hs>Genres (<%= data["genres"].size %> responses)</h1>
 
 ${(function () {
 	const noms = {}
