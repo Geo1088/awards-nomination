@@ -35,7 +35,7 @@ ${(function () {
 		<ul>${Object.keys(noms).map(genreName => {
 			const genre = noms[genreName];
 			return `
-				<li>${genreName}<ul>${Object.keys(genre).sort((a, b) => genre[a] - genre[b]).map(showId => {
+				<li>${genreName}<ul>${Object.keys(genre).sort((a, b) => genre[b] - genre[a]).map(showId => {
 					const show = json.shows.find(show => show.id == showId)
 						|| json.opedOnly.find(show => show.id == showId);
 					if (!show) return;
