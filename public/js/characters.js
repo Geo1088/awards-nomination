@@ -20,10 +20,7 @@ const app = new Vue({
 		},
 		_filtered () {
 			return this.currentList
-				.filter(char => stringMatchesArray(this.filter, [
-					...char.terms,
-					...(this.selectedTab !== 'Overall Cast' ? char.show_ids.map(id => this.shows[id]).flat() : [])
-				]))
+				.filter(char => stringMatchesArray(this.filter, char.terms) || (this.selectedTab !== 'Overall Cast' && stringMatchesArray(this.filter, char.show_ids.map(id => this.shows[id] && this.shows[id].terms).flat())))
 				.filter(show => show.format !== 'MUSIC')
 				.filter(thing => {
 					if (!this.showSelected) return true;
@@ -182,6 +179,6 @@ window.onbeforeunload = function () {
 fetch('/data/test.json').then(res => {
 	return res.json();
 }).then(({characters, shows}) => {
-	app.characters = shuffle(characters).filter(character => character.show_ids.some(id => shows.find(show => show.id === id)));
+	app.characters = shuffle(characters).filter((character, i, arr) => arr.indexOf(character) === i && character.show_ids.some(id => shows.find(show => show.id === id)));
 	app.shows = shuffle(shows);
 });
