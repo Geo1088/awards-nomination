@@ -4380,6 +4380,36 @@
 			"img": "https://cdn.myanimelist.net/images/characters/11/342906.jpg"
 		},
 		{
+			"id": 9090003,
+			"show_ids": [
+				100532
+			],
+			"terms": [
+				"Mato Katori (火鳥 真斗)"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/6/310337.jpg"
+		},
+		{
+			"id": 9090004,
+			"show_ids": [
+				160416
+			],
+			"terms": [
+				"Remi Kakiyasu (柿保 令美)"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/6/354261.jpg"
+		},
+		{
+			"id": 9090005,
+			"show_ids": [
+				160416
+			],
+			"terms": [
+				"Eru Hoshino (星野 絵瑠)"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/11/354254.jpg"
+		},
+		{
 			"id": 132707,
 			"show_ids": [
 				98478
