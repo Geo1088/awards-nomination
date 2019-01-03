@@ -1,0 +1,57 @@
+<script type="text/javascript">
+	const data = JSON.parse(<%= JSON.generate(data).inspect %>);
+</script>
+<div id="app">Loading...</div>
+<script type="text/javascript">
+fetch('/data/test.json').then(res => {
+	return res.json();
+}).then(json => {
+	document.getElementById('app').innerHTML = `
+
+<div class="section"><div class="container"><div class="content">
+
+<h1 class="title">The Game So Far</h1>
+
+<p>${Object.keys(data)
+	.map(key => data[key])
+	.reduce((a, b) => a.concat(b))
+	.filter((obj, i, arr) =>
+		i === arr.findIndex(s => s.id === obj.id)
+	).length} responses
+</p>
+
+<h1>Genres (<%= data["genres"].size %> responses)</h1>
+
+${(function () {
+	const noms = {}
+	for (const response of data.genres.map(response => response.data)) {
+		for (const showId in response) {
+			const genre = response[showId]
+			noms[genre] = noms[genre] || {};
+			noms[genre][showId] = (noms[genre][showId] || 0) + 1;
+		}
+	}
+	return `
+		<ul>${Object.keys(noms).map(genreName => {
+			const genre = noms[genreName];
+			return `
+				<li>${genreName}<ul>${Object.keys(genre).sort((a, b) => genre[a] - genre[b]).map(showId => {
+					const show = json.shows.find(show => show.id == showId)
+						|| json.opedOnly.find(show => show.id == showId);
+					const noms = genre[showId];
+					return `
+						<li>${show.terms[0]} - ${noms}</li>
+					`;
+				}).join('')}</ul></li>
+			`;
+		}).join('')}</ul>
+	`;
+})()}
+
+</div>
+</div>
+</div>
+
+`
+});
+</script>
