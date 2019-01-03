@@ -4410,6 +4410,17 @@
 			"img": "https://cdn.myanimelist.net/images/characters/11/354254.jpg"
 		},
 		{
+			"id": 9090006,
+			"show_ids": [
+				100010
+			],
+			"terms": [
+				"Site Kanrinin 7 (サイト管理人 漆)",
+				"Site Admin 7"
+			],
+			"img": "https://vignette.wikia.nocookie.net/mahoushoujo-site/images/3/38/Nana.png"
+		},
+		{
 			"id": 132707,
 			"show_ids": [
 				98478
@@ -32398,6 +32409,13 @@
 		}
 	],
 	"vas": [
+		{
+			"id": 95259,
+			"name": "Ryusei Nakao",
+			"image": "https://s3.anilist.co/staff/large/n95259-PFBkXsIe3JY4.png",
+			"show": 100010,
+			"character": 9090006
+		},
 		{
 			"id": 95672,
 			"name": "Yuuki Kaji",
