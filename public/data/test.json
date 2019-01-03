@@ -18,12 +18,13 @@
 			"mal": null,
 			"terms": [
 				"Mecha-ude",
+				"Mechaude",
 				"Mechanical Arms",
 				"メカウデ"
 			],
 			"img": "https://s3.anilist.co/media/anime/cover/small/101915-SDoR6z9O3kp0.jpg",
 			"format": "TV",
-			"short": false,
+			"short": true,
 			"original": false
 		},
 		{
