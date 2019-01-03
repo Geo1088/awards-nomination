@@ -41,21 +41,6 @@
 			"original": false
 		},
 		{
-			"id": 100661,
-			"mal": null,
-			"terms": [
-				"Hugtto! Precure",
-				"Hugtto! Precure",
-				"HuGっと！プリキュア",
-				"Hugtto! Pretty Cure",
-				"Hug tto! Precure"
-			],
-			"img": "https://s3.anilist.co/media/anime/cover/small/nx100661-Wn8zIkDkUe17.jpg",
-			"format": "TV",
-			"short": false,
-			"original": true
-		},
-		{
 			"id": 98562,
 			"mal": null,
 			"terms": [
@@ -48279,6 +48264,21 @@
 			"format": "TV",
 			"short": false,
 			"original": false
+		},
+		{
+			"id": 100661,
+			"mal": null,
+			"terms": [
+				"Hugtto! Precure",
+				"Hugtto! Precure",
+				"HuGっと！プリキュア",
+				"Hugtto! Pretty Cure",
+				"Hug tto! Precure"
+			],
+			"img": "https://s3.anilist.co/media/anime/cover/small/nx100661-Wn8zIkDkUe17.jpg",
+			"format": "TV",
+			"short": false,
+			"original": true
 		},
 		{
 			"id": 101336,
