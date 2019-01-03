@@ -20,7 +20,7 @@ const app = new Vue({
 		},
 		_filtered () {
 			return this.currentList
-				.filter(char => stringMatchesArray(this.filter, char.terms) || (this.selectedTab !== 'Overall Cast' && stringMatchesArray(this.filter, char.show_ids.map(id => this.shows[id] && this.shows[id].terms).flat())))
+				.filter(char => stringMatchesArray(this.filter, char.terms) || (this.selectedTab !== 'Overall Cast' && stringMatchesArray(this.filter, [].concat(...char.show_ids.map(id => this.shows[id] && this.shows[id].terms)))))
 				.filter(show => show.format !== 'MUSIC')
 				.filter(thing => {
 					if (!this.showSelected) return true;
