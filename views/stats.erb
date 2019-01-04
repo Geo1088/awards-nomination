@@ -423,7 +423,6 @@ ${(function () {
 		<td>Votes</td>
 	</tr>
 	${(function () {
-		debugger;
 		const votes = {};
 		for (const response of data.production.map(res => res.data.opEd)) {
 			for (const showId in response) {
@@ -436,7 +435,6 @@ ${(function () {
 				}
 			}
 		}
-		debugger;
 		console.log(votes);
 		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(song => {
 			const parts = song.split(' ');
