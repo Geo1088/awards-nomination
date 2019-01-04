@@ -63,7 +63,7 @@ ${(function () {
 						<th>Noms this category</th>
 						<th>Noms all categories</th>
 					</tr>
-					${Object.keys(genre).filter(show => showGenres[show].genre === genreName).sort((a, b) => genre[b] - genre[a]).map(showId => {
+					${Object.keys(showGenres).filter(show => showGenres[show].genre === genreName).sort((a, b) => showGenres[b].totalVotes - showGenres[a].totalVotes).map(showId => {
 						const show = json.shows.find(show => show.id == showId)
 							|| json.opedOnly.find(show => show.id == showId);
 						if (!show) return;
