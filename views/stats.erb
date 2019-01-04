@@ -68,7 +68,7 @@ ${(function () {
 						<th>Noms this category</th>
 						<th>Noms all categories</th>
 					</tr>
-					${Object.keys(showGenres).filter(show => showGenres[show].genre === genreName).sort((a, b) => showGenres[b].totalVotes - showGenres[a].totalVotes).map(showId => {
+					${Object.keys(showGenres).sort((a, b) => showGenres[b].totalVotes - showGenres[a].totalVotes).map(showId => {
 						const show = json.shows.find(show => show.id == showId)
 							|| json.opedOnly.find(show => show.id == showId);
 						if (!show) return;
@@ -131,7 +131,7 @@ ${(function () {
 						<th>Noms this category</th>
 						<th>Noms all categories</th>
 					</tr>
-					${Object.keys(showGenres).filter(show => showGenres[show].genre === genreName).sort((a, b) => showGenres[b].totalVotes - showGenres[a].totalVotes).map(showId => {
+					${Object.keys(showGenres).sort((a, b) => showGenres[b].totalVotes - showGenres[a].totalVotes).map(showId => {
 						const show = json.characters.find(show => show.id == showId);
 						if (!show) return;
 						const nomsCount = genre[showId];
