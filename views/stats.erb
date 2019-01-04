@@ -35,6 +35,7 @@ ${(function () {
 	for (const response of data.genres.map(response => response.data)) {
 		for (const showId in response) {
 			const genre = response[showId]
+			if (genre == null) return;
 			noms[genre] = noms[genre] || {};
 			noms[genre][showId] = (noms[genre][showId] || 0) + 1;
 			showsFirst[showId] = showsFirst[showId] || {};
@@ -97,6 +98,7 @@ ${(function () {
 	for (const response of data.characters.map(response => response.data.characters)) {
 		for (const showId in response) {
 			const genre = response[showId]
+			if (genre == null) return;
 			noms[genre] = noms[genre] || {};
 			noms[genre][showId] = (noms[genre][showId] || 0) + 1;
 			showsFirst[showId] = showsFirst[showId] || {};
@@ -127,7 +129,7 @@ ${(function () {
 						<th colspan="3" style="font-size: 2em;">${genreName}</th>
 					</tr>
 					<tr>
-						<th>Show</th>
+						<th>Character</th>
 						<th>Noms this category</th>
 						<th>Noms all categories</th>
 					</tr>
