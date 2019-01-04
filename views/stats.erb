@@ -27,6 +27,18 @@ fetch('/data/test.json').then(res => {
 			<li><a href="#cast">Overall Cast</a></li>
 		</ul>
 	</li>
+	<li><a href="#Production">Production</a>
+		<ul>
+			<li><a href="#animation">Animation</a></li>
+			<li><a href="#artstyle">Art Style</a></li>
+			<li><a href="#background">Background Art</a></li>
+			<li><a href="#character">Character Design</a></li>
+			<li><a href="#cinema">Cinematography</a></li>
+			<li><a href="#ost">Original Soundtrack</a></li>
+			<li><a href="#oped">OP/ED</a></li>
+			<li><a href="#va">Voice Acting</a></li>
+		</ul>
+	</li>
 	<li><a href="#Main">Main</a>
 		<ul>
 			<li><a href="#movie">Best Movie</a></li>
@@ -220,6 +232,189 @@ ${(function () {
 		}).join('')
 	})()}
 </tbody></table>
+
+<h2 id="Production">Production (${data.main.length} responses)</h2>
+
+<h3 id="animation">Animation</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.production.map(res => res.data.animation)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
+<h3 id="art">Art Style</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.production.map(res => res.data.art)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
+<h3 id="background">Background Art</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.production.map(res => res.data.background)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
+<h3 id="character">Character Design</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.production.map(res => res.data.characters)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
+<h3 id="cinema">Cinematography</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.production.map(res => res.data.cinema)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
+<h3 id="ost">Original Soundtrack</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.production.map(res => res.data.ost)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
 
 <h2 id="Main">Main (${data.main.length} responses)</h2>
 
