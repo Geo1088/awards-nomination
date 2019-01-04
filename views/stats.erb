@@ -428,7 +428,7 @@ ${(function () {
 			for (const showId in response) {
 				if (!response[showId]) continue;
 				for (const {num, type} of response[showId]) {
-					if (num == '') continue;
+					if (num == '') num = 1;
 					if (type !== 'op') continue;
 					const key = showId + ' ' + num
 					votes[key] = (votes[key] || 0) + 1;
@@ -448,6 +448,45 @@ ${(function () {
 			return `
 				<tr>
 					<th>OP ${num} from ${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
+<h3 id="ed">ED</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.production.map(res => res.data.opEd)) {
+			for (const showId in response) {
+				if (!response[showId]) continue;
+				for (const {num, type} of response[showId]) {
+					if (num == '') num = 1;
+					if (type !== 'ed') continue;
+					const key = showId + ' ' + num
+					votes[key] = (votes[key] || 0) + 1;
+				}
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(song => {
+			const parts = song.split(' ');
+			const showId = parts[0];
+			const num = parts[1];
+			const show = json.shows.find(show => show.id == showId)
+				|| json.opedOnly.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[song];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>ED ${num} from ${show.terms[0]}</th>
 					<td>${nomsCount}</td>
 				</tr>
 			`;
