@@ -494,6 +494,45 @@ ${(function () {
 	})()}
 </tbody></table>
 
+<h3 id="va">VA</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.production.map(res => res.data.va)) {
+			for (const key in response) {
+				if (!response[key]) continue;
+				votes[key] = (votes[key] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		debugger;
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(thing => {
+			const parts = thing.split('-');
+			const vaId = parts[0];
+			const showId = parts[1];
+			const charId = parts[2];
+			const va = json.vas.find(va => va.id == vaId);
+			if (!va) return;
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const character = json.characters.find(char => char.id == charId);
+			if (!character) return;
+			const nomsCount = votes[thing];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${va.name} voicing ${character.terms[0]} in ${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
 <h2 id="Main">Main (${data.main.length} responses)</h2>
 
 <h3 id="movie">Best Movie</h3>
