@@ -165,7 +165,7 @@ ${(function () {
 			}
 		}
 		console.log(votes);
-		return Object.keys(votes).map(showId => {
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
 			const show = json.characters.find(show => show.id == showId);
 			if (!show) return;
 			const realShow = json.shows.find(s => s.id === show.show_ids[0])
