@@ -24,6 +24,7 @@ fetch('/data/test.json').then(res => {
 		<ul>
 			<li><a href="#mscd">Main/Supporting Comedic/Dramatic</a></li>
 			<li><a href="#antag">Antagonist</a></li>
+			<li><a href="#cast">Overall Cast</a></li>
 		</ul>
 	</li>
 </ul>
@@ -175,6 +176,36 @@ ${(function () {
 			return `
 				<tr>
 					<th>${show.terms[0]} (from ${realShow.terms[0]})</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
+<h3 id="cast">Overall Cast</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.characters.map(res => res.data.shows)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
 					<td>${nomsCount}</td>
 				</tr>
 			`;
