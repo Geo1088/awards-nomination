@@ -20,6 +20,11 @@ fetch('/data/test.json').then(res => {
 <h2>Table of Contents</h2>
 <ul>
 	<li><a href="#Genres">Genres</a></li>
+	<li><a href="#Characters">Characters</a>
+		<ul>
+			<li><a href="#mscd">Main/Supporting Comedic/Dramatic</a></li>
+		</ul>
+	</li>
 </ul>
 
 <h2 id="Genres">Genres (${data.genres.length} responses)</h2>
@@ -66,6 +71,68 @@ ${(function () {
 					${Object.keys(showGenres).filter(show => showGenres[show].genre === genreName).sort((a, b) => showGenres[b].totalVotes - showGenres[a].totalVotes).map(showId => {
 						const show = json.shows.find(show => show.id == showId)
 							|| json.opedOnly.find(show => show.id == showId);
+						if (!show) return;
+						const nomsCount = genre[showId];
+						return `
+							<tr>
+								<th>${show.terms[0]}</th>
+								<td>${nomsCount}</td>
+								<td>${showGenres[showId].totalVotes}</td>
+							</tr>
+						`;
+					}).join('')}
+				`;
+			}).join('')}
+		</tbody></table>
+	`;
+})()}
+
+<h2 id="Characters">Characters (${data.characters.length} responses)</h2>
+
+<h3 id="mscd">Main/supporting comedic/dramatic</h3>
+
+${(function () {
+	const noms = {}
+	const showsFirst = {}
+	for (const response of data.characters.map(response => response.data.characters)) {
+		for (const showId in response) {
+			const genre = response[showId]
+			noms[genre] = noms[genre] || {};
+			noms[genre][showId] = (noms[genre][showId] || 0) + 1;
+			showsFirst[showId] = showsFirst[showId] || {};
+			showsFirst[showId][genre] = noms[genre][showId];
+		}
+	}
+	const showGenres = {};
+	for (const showId in showsFirst) {
+		showGenres[showId] = {genre: null, totalVotes: 0, genreVotes: 0};
+		for (const genre in showsFirst[showId]) {
+			const votes = showsFirst[showId][genre];
+			console.log(votes);
+			if (votes > showGenres[showId].genreVotes) {
+				showGenres[showId].genre = genre;
+				showGenres[showId].genreVotes = votes;
+			}
+			showGenres[showId].totalVotes += votes;
+		}
+	}
+	console.log(showGenres);
+	debugger;
+	return `
+		<table><tbody>
+			${Object.keys(noms).sort().map(genreName => {
+				const genre = noms[genreName];
+				return `
+					<tr id="${genreName}">
+						<th colspan="3" style="font-size: 2em;">${genreName}</th>
+					</tr>
+					<tr>
+						<th>Show</th>
+						<th>Noms this category</th>
+						<th>Noms all categories</th>
+					</tr>
+					${Object.keys(showGenres).filter(show => showGenres[show].genre === genreName).sort((a, b) => showGenres[b].totalVotes - showGenres[a].totalVotes).map(showId => {
+						const show = json.characters.find(show => show.id == showId);
 						if (!show) return;
 						const nomsCount = genre[showId];
 						return `
