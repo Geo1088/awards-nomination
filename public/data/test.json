@@ -4421,6 +4421,126 @@
 			"img": "https://vignette.wikia.nocookie.net/mahoushoujo-site/images/3/38/Nana.png"
 		},
 		{
+			"id": 9090007,
+			"show_ids": [
+				99753
+			],
+			"terms": [
+				"Michiru Amatsuki"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/11/342680.jpg"
+		},
+		{
+			"id": 9090008,
+			"show_ids": [
+				99753
+			],
+			"terms": [
+				"Makoto Kiriyama"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/10/342677.jpg"
+		},
+		{
+			"id": 9090009,
+			"show_ids": [
+				99753
+			],
+			"terms": [
+				"Nao Kiriyama"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/13/342679.jpg"
+		},
+		{
+			"id": 9090010,
+			"show_ids": [
+				99753
+			],
+			"terms": [
+				"Kae Midorikawa"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/3/342678.jpg"
+		},
+		{
+			"id": 9090011,
+			"show_ids": [
+				101289
+			],
+			"terms": [
+				"Yuuto Suou"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/14/358879.jpg"
+		},
+		{
+			"id": 9090012,
+			"show_ids": [
+				101289
+			],
+			"terms": [
+				"Siegrune"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/13/358881.jpg"
+		},
+		{
+			"id": 9090013,
+			"show_ids": [
+				101289
+			],
+			"terms": [
+				"Linnea"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/5/358883.jpg"
+		},
+		{
+			"id": 9090014,
+			"show_ids": [
+				101289
+			],
+			"terms": [
+				"Ingrid"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/12/358882.jpg"
+		},
+		{
+			"id": 9090015,
+			"show_ids": [
+				101289
+			],
+			"terms": [
+				"Felicia"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/10/358880.jpg"
+		},
+		{
+			"id": 9090016,
+			"show_ids": [
+				101289
+			],
+			"terms": [
+				"Albertina"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/4/365585.jpg"
+		},
+		{
+			"id": 9090017,
+			"show_ids": [
+				101289
+			],
+			"terms": [
+				"Christina"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/9/365586.jpg"
+		},
+		{
+			"id": 9090018,
+			"show_ids": [
+				101289
+			],
+			"terms": [
+				"Mizuki Shimoya"
+			],
+			"img": "https://cdn.myanimelist.net/images/characters/6/358884.jpg"
+		},
+		{
 			"id": 132707,
 			"show_ids": [
 				98478
