@@ -47,7 +47,6 @@ ${(function () {
 		showGenres[showId] = {genre: null, totalVotes: 0, genreVotes: 0};
 		for (const genre in showsFirst[showId]) {
 			const votes = showsFirst[showId][genre];
-			console.log(votes);
 			if (votes > showGenres[showId].genreVotes) {
 				showGenres[showId].genre = genre;
 				showGenres[showId].genreVotes = votes;
@@ -55,7 +54,6 @@ ${(function () {
 			showGenres[showId].totalVotes += votes;
 		}
 	}
-	console.log(showGenres);
 	return `
 		<table><tbody>
 			${Object.keys(noms).sort().map(genreName => {
@@ -110,7 +108,6 @@ ${(function () {
 		showGenres[showId] = {genre: null, totalVotes: 0, genreVotes: 0};
 		for (const genre in showsFirst[showId]) {
 			const votes = showsFirst[showId][genre];
-			console.log(votes);
 			if (votes > showGenres[showId].genreVotes) {
 				showGenres[showId].genre = genre;
 				showGenres[showId].genreVotes = votes;
@@ -118,8 +115,6 @@ ${(function () {
 			showGenres[showId].totalVotes += votes;
 		}
 	}
-	console.log(showGenres);
-	debugger;
 	return `
 		<table><tbody>
 			${Object.keys(noms).sort().map(genreName => {
@@ -153,6 +148,38 @@ ${(function () {
 		</tbody></table>
 	`;
 })()}
+
+<h3 id="antag">Antagonist</h3>
+<table><tbody>
+	<tr>
+		<td>Character</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.characters.map(res => res.data.antagonists)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).map(showId => {
+			const show = json.characters.find(show => show.id == showId);
+			if (!show) return;
+			const realShow = json.shows.find(s => s.id === show.show_ids[0])
+			if (!realShow) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]} (from ${realShow.terms[0]})</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
 
 </div>
 </div>
