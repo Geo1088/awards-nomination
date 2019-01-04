@@ -221,7 +221,97 @@ ${(function () {
 	})()}
 </tbody></table>
 
-<h2 id="Main">Main</h2>
+<h2 id="Main">Main (${data.main.length} responses)</h2>
+
+<h3 id="movie">Best Movie</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.main.map(res => res.data.movies)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
+<h3 id="short">Best Short</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.main.map(res => res.data.shorts)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
+
+<h3 id="original">Best Original Anime</h3>
+<table><tbody>
+	<tr>
+		<td>Show</td>
+		<td>Votes</td>
+	</tr>
+	${(function () {
+		const votes = {};
+		for (const response of data.main.map(res => res.data.originals)) {
+			for (const show in response) {
+				if (!response[show]) continue;
+				votes[show] = (votes[show] || 0) + 1;
+			}
+		}
+		console.log(votes);
+		return Object.keys(votes).sort((a, b) => votes[b] - votes[a]).map(showId => {
+			const show = json.shows.find(show => show.id == showId);
+			if (!show) return;
+			const nomsCount = votes[showId];
+			if (nomsCount == null) return
+			return `
+				<tr>
+					<th>${show.terms[0]}</th>
+					<td>${nomsCount}</td>
+				</tr>
+			`;
+		}).join('')
+	})()}
+</tbody></table>
 
 <h3 id="aoty">AOTY</h3>
 <table><tbody>
