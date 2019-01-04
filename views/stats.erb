@@ -427,7 +427,7 @@ ${(function () {
 		for (const response of data.production.map(res => res.data.opEd)) {
 			for (const showId in response) {
 				if (!response[showId]) continue;
-				for (const {num, type} of response[showId]) {
+				for (let {num, type} of response[showId]) {
 					if (num == '') num = 1;
 					if (type !== 'op') continue;
 					const key = showId + ' ' + num
@@ -466,7 +466,7 @@ ${(function () {
 		for (const response of data.production.map(res => res.data.opEd)) {
 			for (const showId in response) {
 				if (!response[showId]) continue;
-				for (const {num, type} of response[showId]) {
+				for (let {num, type} of response[showId]) {
 					if (num == '') num = 1;
 					if (type !== 'ed') continue;
 					const key = showId + ' ' + num
