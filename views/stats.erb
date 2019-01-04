@@ -35,7 +35,7 @@ ${(function () {
 	for (const response of data.genres.map(response => response.data)) {
 		for (const showId in response) {
 			const genre = response[showId]
-			if (genre == null) return;
+			if (genre == null) continue;
 			noms[genre] = noms[genre] || {};
 			noms[genre][showId] = (noms[genre][showId] || 0) + 1;
 			showsFirst[showId] = showsFirst[showId] || {};
@@ -69,7 +69,7 @@ ${(function () {
 						<th>Noms this category</th>
 						<th>Noms all categories</th>
 					</tr>
-					${Object.keys(showGenres).sort((a, b) => showGenres[b].totalVotes - showGenres[a].totalVotes).map(showId => {
+					${Object.keys(genre).sort((a, b) => genre[b] - genre[a]).map(showId => {
 						const show = json.shows.find(show => show.id == showId)
 							|| json.opedOnly.find(show => show.id == showId);
 						if (!show) return;
@@ -98,7 +98,7 @@ ${(function () {
 	for (const response of data.characters.map(response => response.data.characters)) {
 		for (const showId in response) {
 			const genre = response[showId]
-			if (genre == null) return;
+			if (genre == null) continue;
 			noms[genre] = noms[genre] || {};
 			noms[genre][showId] = (noms[genre][showId] || 0) + 1;
 			showsFirst[showId] = showsFirst[showId] || {};
@@ -133,10 +133,11 @@ ${(function () {
 						<th>Noms this category</th>
 						<th>Noms all categories</th>
 					</tr>
-					${Object.keys(showGenres).sort((a, b) => showGenres[b].totalVotes - showGenres[a].totalVotes).map(showId => {
+					${Object.keys(genre).sort((a, b) => genre[b] - genre[a]).map(showId => {
 						const show = json.characters.find(show => show.id == showId);
 						if (!show) return;
 						const nomsCount = genre[showId];
+						if (nomsCount == null) return
 						return `
 							<tr>
 								<th>${show.terms[0]}</th>
