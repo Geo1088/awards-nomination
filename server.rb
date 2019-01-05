@@ -9,6 +9,159 @@ c = r.connect db: "aanoms_responses"
 CONFIG = YAML.load_file "config.yaml"
 HOSTS = CONFIG[:hosts]
 
+JURORS = %w[
+  FetchFrosh
+  AmeCatsRune
+  MrMonday11235
+  tacticianjackk
+  SIRTreehugger
+  DoctorWhoops
+  rusticks
+  orange-shades
+  Theleux
+  Contrefacon
+  LyfeBlades
+  Cacophon
+  Nickknight8
+  chrispy294
+  Combo33
+  __Mekakucity
+  Baker Mayfield
+  MrGZJawesome
+  ElDuwango
+  Tigaisbae
+  EpicTroll27
+  ATargetFinderScrub
+  RuSyxx
+  thechosenapiks
+  SpareUmbrella
+  CadisRai
+  kaverik
+  Mozilla_Fennekin
+  Vektor_
+  rudygnuj
+  sasalx
+  jonlxh
+  CoronelPanic
+  hamptonwooster
+  bconeill
+  Zhebutler
+  Blazehero
+  Felistar
+  elleyonce
+  KokoroAkechi
+  Chrngb
+  iLoveAGoodIDea
+  Maelstrommusic
+  bagglewaggle
+  HiggsBosonHL
+  Vektor_
+  NarneIsGood
+  pewface123456789d
+  Aztecopi
+  XoNtheHAWK
+  goncix
+  Zelosis
+  tiny_nipples
+  13_Thieves
+  Totalenlo
+  BioChemRS
+  Otoshigami69
+  Master_of_Ares
+  Princess_Tutu
+  tombeet
+  Miidas-92
+  RingoFreakingStarr
+  Cryzzalis
+  kaixinsu
+  clerikal
+  TigerK3
+  goncix
+  HawkAussie
+  Mage_of_Shadows
+  NBVictory
+  Scooll5
+  oyooy
+  llsmobius1
+  jairefah
+  bakuzan_
+  EpicTroll27
+  anarchycupcake
+  DarkFuzz
+  isrozzis
+  Naattori44
+  CT_BINO
+  il42133
+  alwayslonesome
+  HumpingMantis
+  xlolTenshi
+  KokoroAkechi
+  PwillyAlldilly
+  XilentXenocide
+  asi14
+  BAmario
+  Amajor2000
+  Nyhuset
+  beckwreck
+  weejona
+  BlubbyFluff
+  otgesus
+  77Mohammad77
+  bornonamountaintop
+  Escolyte
+  theyummybagel
+  chrispy294
+  wheatsquares33
+  Hades_Re
+  JeffBallMap
+  zhongzhen93
+  Idesmi
+  StoneFix
+  bconeill
+  Hyoizaburo
+  valkeiser
+  Tratini
+  goukaryuu
+  Schinco
+  irvom
+  Animestuck
+  sfafreak
+  faux_wizard
+  SirPrize
+  Fircoal
+  gNat2
+  Fred_MK
+  Raging_SEAn
+  SuperStarfox64
+  keeptrackoftime
+  Flegels
+  cs098
+  Raging_SEAn
+  theultimate9
+  Raging_SEAn
+  Tipsly
+  AfutureV
+  nickknight8
+  HidalgoAndThree
+  RHINN0
+  sacktheavenger
+  PerfectPublican
+  Snarfalopagus
+  xxiLikeCatsxx
+  33opo
+  FrenziedHero
+  brown_man_bob
+  Schinco
+  bconeill
+  ATonOfBacon
+  redshirtengineer
+  mcadylons
+  Win32error
+  Deafnesss
+  LegionWrex
+  bananice
+].map &:downcase
+
 use Rack::Session::Cookie, secret: CONFIG[:cookie_secret]
 use Redd::Middleware, CONFIG.merge({
   user_agent: "web:github.com/Geo1088/awards-nomination:v1.0.0 (by /u/geo1088)",
@@ -76,6 +229,7 @@ end
 post "/response/:form" do |form|
   authenticate!
   halt 400, "Invalid Form" if !r.table_list().run(c).include? form
+  halt 400, "this is why we can't have nice things" if JURORS.include? @r.me.name.downcase
   begin
     data = JSON.parse(request.body.string)
   rescue
