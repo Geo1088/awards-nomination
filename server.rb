@@ -160,6 +160,7 @@ JURORS = %w[
   Deafnesss
   LegionWrex
   bananice
+  geo1088
 ].map &:downcase
 
 use Rack::Session::Cookie, secret: CONFIG[:cookie_secret]
