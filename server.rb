@@ -228,6 +228,7 @@ get %r{/(genres|characters|production|main)} do |route|
 end
 
 post "/response/:form" do |form|
+  halt 400, "noms are over loser"
   authenticate!
   halt 400, "Invalid Form" if !r.table_list().run(c).include? form
   halt 400, "this is why we can't have nice things" if JURORS.include? @r.me.name.downcase
