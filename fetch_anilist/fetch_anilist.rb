@@ -4,7 +4,6 @@ require "httparty"
 SHOWS_QUERY = File.read "queries/shows.gql"
 CHARS_QUERY = File.read "queries/show_characters.gql"
 SINGLE_SHOW_QUERY = File.read "queries/single_show.gql"
-MODIFICATIONS = JSON.parse File.read "edited_shows.json"
 
 def anilist_request(query, variables = {})
   # Make the request
@@ -43,11 +42,7 @@ def get_shows(page: 1)
   p page_info
   media.each.with_index 1 do |show, i|
     puts "#{page}-#{i} Show #{show["id"]}"
-    if MODIFICATIONS["removed"].include? show["id"]
-      puts " Skipping, inelligible"
-      next
-    end
-    movie = MODIFICATIONS["movies"].include? show["id"]
+    movie = false
     puts " Updating format to MOVIE (manual override)" if movie
     @shows.push({
       id: show["id"],
@@ -55,8 +50,8 @@ def get_shows(page: 1)
       terms: show["title"].values.concat(show["synonyms"]),
       img: show["coverImage"]["medium"],
       format: movie ? "MOVIE" : show["format"],
-      short: MODIFICATIONS["shorts"].include?(show["id"]),
-      original: MODIFICATIONS["originals"].include?(show["id"])
+      short: false,
+      original: false,
     })
     get_show_characters show["id"] if show["characters"]["edges"].size > 0
   end
@@ -125,7 +120,7 @@ def get_extra_show(show_id)
     img: show["coverImage"]["medium"],
     format: "TV",
     short: false,
-    original: MODIFICATIONS["originals"].include?(show["id"])
+    original: false,
   }
   @shows.push hash
   get_show_characters show_id if show["characters"]["edges"].size > 0
@@ -133,10 +128,11 @@ end
 
 puts "Starting"
 start = Time.now
+get_shows
 puts "Getting additional shows"
-MODIFICATIONS["added"].each do |show_id|
-  get_extra_show show_id
-end
+# MODIFICATIONS["added"].each do |show_id|
+#   get_extra_show show_id
+# end
 time = Time.now - start
 puts "Finished in #{time}ms"
 File.write "../public/data/test3.json", {
